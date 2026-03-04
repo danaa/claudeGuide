@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Code Quest</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-brand">
+    <button class="menu-btn" onclick="document.getElementById('sb').classList.toggle('open')">&#9776;</button>
+    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.png" class="topbar-logo" alt="Claude">
+    <span class="topbar-name">Claude Code Quest</span>
+  </div>
+  <div class="topbar-stats">
+    <div class="xp-pill">
+      <div class="dot"></div>
+      <div class="xp-bar"><div class="xp-fill" id="xpBar"></div></div>
+      <span id="xpNum">0 XP</span>
+    </div>
+    <div class="lvl-badge" id="lvl">LVL 1</div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sb">
+  <div class="sidebar-label">שלבי המסע</div>
+  <ul class="nav-list" id="navList"></ul>
+</nav>
+
+<!-- MAIN -->
+<div class="main-wrapper">
+<main class="main" id="main">
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH0: WELCOME -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view on" id="v0">
+  <div class="hero">
+    <div class="hero-particles"></div>
+    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.png" class="hero-logo" alt="">
+    <div class="hero-label">בואו איתי למסע</div>
+    <h1>יוצרים פרסומות AI<br><span class="gr">עם Claude Code</span></h1>
+    <p class="sub">המסע שלכם ליצירת פרסומות AI. בלי שורת קוד אחת. רק דמיון ושיחה.</p>
+
+    <div class="example-badge" style="margin-bottom:10px">🎬 דוגמה לתוצאה</div>
+    <p style="font-size:.85rem;color:var(--cream3);max-width:480px;margin:0 auto 14px;line-height:1.7">הפרסומת הזו נוצרה עם Claude Code. הקונספט היה משפט אחד, Claude עשה את השאר: תסריט, סטוריבורד, קריינות, אנימציה ועריכה. <span class="hl">היו כמה דיוקים ותיקונים בדרך</span>, אבל בגדול, Claude הוביל את התהליך:</p>
+    <video class="hero-img" autoplay muted loop playsinline>
+      <source src="assets/commercial.mp4" type="video/mp4">
+    </video>
+
+    <div class="pipe">
+      <div class="pipe-item"><span>💡</span> אתם נותנים קונספט</div><div class="pipe-line"></div>
+      <div class="pipe-item"><span>📝</span> Claude כותב תסריט</div><div class="pipe-line"></div>
+      <div class="pipe-item"><span>🎨</span> Claude מייצר סטוריבורד</div><div class="pipe-line"></div>
+      <div class="pipe-item"><span>🎙️</span> Claude יוצר קריינות</div><div class="pipe-line"></div>
+      <div class="pipe-item"><span>🎬</span> Claude עושה אנימציה לווידאו</div><div class="pipe-line"></div>
+      <div class="pipe-item"><span>✂️</span> Claude עורך עם Remotion</div><div class="pipe-line"></div>
+      <div class="pipe-item"><span>🏆</span> פרסומת מוכנה!</div>
+    </div>
+
+    <button class="btn btn-start pulse" onclick="go(1)">יאללה, מתחילים!</button>
+  </div>
+
+  <div class="card">
+    <span class="card-icon">🤔</span>
+    <h3>מה נלמד פה?</h3>
+    <p>במסע הזה תלמדו לדבר עם <span class="hl">Claude Code</span>, עוזר AI שיודע לעשות <strong>כל דבר טכני בשבילכם</strong>. אתם לא צריכים לדעת לתכנת. אתם צריכים לדעת <strong>מה לבקש</strong>.</p>
+    <p style="margin-top:8px">בסוף המסע תדעו להגיד ל-Claude ליצור פרסומת שלמה: מתסריט, דרך תמונות, קריינות ואנימציה, עד לווידאו מוגמר.</p>
+  </div>
+
+  <div class="insight">
+    <h3>💡 לפני שמתחילים, מילה קטנה</h3>
+    <p>במסע הזה תלמדו לבנות אוטומציה שיוצרת פרסומות וידאו עם Claude Code. התוצאה לא תמיד תצא מושלמת בפעם הראשונה, וזה בסדר גמור. כלי AI עדיין בהתפתחות, ולפעמים Claude יצטרך כיוון מכם, תיקון קטן, או ניסיון נוסף. אבל בדיוק בשביל זה אנחנו פה: <span class="hl">ללמוד איך לדבר איתו, איך לכוון אותו, ואיך להוציא ממנו את המיטב</span>. הדרך עצמה היא הלמידה.</p>
+    <p style="margin-top:12px">⚠️ <strong>שימוש בשירותים עולה כסף.</strong> צריך מנוי <span class="hl">Claude Pro</span> (20$/חודש), ובמהלך המסע נשתמש בשירותי API שעולים סכומים קטנים. עלות פרויקט בודד של פרסומת: <span class="hlg">כ-2$-5$ בלבד</span> (מעבר למנוי Claude). פירוט מלא בשלב 5.</p>
+  </div>
+
+  <div class="card about-card">
+    <h3>מי עומדת מאחורי המסע הזה?</h3>
+    <p><span class="hl">דנה אקרמן גרין</span> / Digital Creator, מפתחת תוכנה, מנהלת קהילת Midjourney Israel, ויוצרת כלי AI יצירתיים. דנה מלמדת אנשים יצירתיים לרתום טכנולוגיה בלי לכתוב שורת קוד אחת.</p>
+    <div class="about-links">
+      <a href="https://x.com/DanaGreenAI" target="_blank" class="about-link">𝕏 @DanaGreenAI</a>
+      <a href="https://www.linkedin.com/in/dana-akerman-green-10347365" target="_blank" class="about-link">LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH1: INSTALL CLAUDE CODE DESKTOP -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v1">
+  <div class="ch-tag">שלב 1 מתוך 12</div>
+  <h2 class="ch-h">מתקינים את Claude Code</h2>
+  <p class="ch-sub">הורדה, התקנה, והפעלה. כמו כל אפליקציה רגילה.</p>
+
+  <div class="insight">
+    <h3>מה זה Claude Code?</h3>
+    <p>Claude Code הוא <strong>אפליקציית דסקטופ</strong> שבה אתם מדברים עם Claude בצ'אט, והוא בונה דברים בשבילכם. כמו ChatGPT, אבל הוא יודע <span class="hl">ליצור קבצים, להריץ קוד, ולבנות פרויקטים שלמים</span> על המחשב שלכם.</p>
+  </div>
+
+  <div class="card">
+    <h3>📋 מה צריך לפני?</h3>
+    <ul>
+      <li>מחשב עם <span class="hl">Windows 10</span> ומעלה (או Mac)</li>
+      <li>חיבור לאינטרנט</li>
+      <li>חשבון <a href="https://claude.ai/upgrade" target="_blank" class="hl" style="text-decoration:none;border-bottom:1px solid rgba(255,140,90,.3)">Claude Pro או Claude Max</a> (מנוי בתשלום)</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>שלב 1: הורידו את האפליקציה</h3>
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h4>היכנסו לדף ההורדה</h4><p>גלשו ל-<a href="https://claude.com/download" target="_blank" class="hl" style="text-decoration:none;border-bottom:1px solid rgba(255,140,90,.3)">claude.com/download</a> והורידו את הגרסה למחשב שלכם (Windows או Mac)</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h4>התקינו</h4><p>פתחו את הקובץ שהורדתם והתקינו כמו כל תוכנה רגילה</p></div></div>
+    <div class="step"><div class="step-n">3</div><div class="step-body"><h4>התחברו</h4><p>פתחו את האפליקציה והתחברו עם חשבון Claude שלכם</p></div></div>
+  </div>
+
+  <div class="card">
+    <h3>שלב 2: היכנסו ללשונית Code</h3>
+    <p>בחלק העליון של האפליקציה יש שלוש לשוניות: <strong>Chat</strong>, <strong>Cowork</strong>, ו-<strong>Code</strong>.</p>
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h4>לחצו על Code</h4><p>זו הלשונית שבה Claude יודע לבנות דברים על המחשב שלכם</p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h4>בחרו תיקייה</h4><p>לחצו <span class="hl">Select folder</span> ובחרו תיקייה לפרויקט (צרו תיקייה חדשה בכל מקום שנוח)</p></div></div>
+    <p style="margin-top:12px"><span class="hlg">זהו! אתם מוכנים לעבוד.</span> תיבת הצ'אט מוכנה. כותבים מה שרוצים ו-Claude עושה.</p>
+    <img src="assets/claudeDesktop.png" alt="Claude Code Desktop" style="display:block;max-width:360px;width:100%;margin:16px auto 0;border-radius:var(--r);box-shadow:0 4px 20px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);">
+  </div>
+
+  <div class="quiz" data-id="q1">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מה זה Claude Code?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">אפליקציה לטלפון</div>
+      <div class="quiz-opt" onclick="qz(this,1)">אפליקציית דסקטופ שבה מדברים עם AI שבונה דברים בשבילכם</div>
+      <div class="quiz-opt" onclick="qz(this,0)">שפת תכנות חדשה</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(1)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH2: FIRST CONVERSATION -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v2">
+  <div class="ch-tag">שלב 2 מתוך 12</div>
+  <h2 class="ch-h">השיחה הראשונה עם Claude</h2>
+  <p class="ch-sub">Claude Code הוא כמו עובד סופר מוכשר. הוא צריך לדעת מה אתם רוצים, וזהו.</p>
+
+  <div class="insight">
+    <h3>חישבו על זה ככה</h3>
+    <p>אם הייתם שוכרים במאי פרסומות, לא הייתם כותבים לו תסריט מוכן, נכון? הייתם <strong>מספרים לו את הרעיון</strong>, והוא היה עושה את השאר. עם Claude Code זה בדיוק אותו דבר. <span class="hl">אתם נותנים קונספט, הוא מחפש השראה, כותב תסריט, ובונה הכל.</span></p>
+  </div>
+
+  <div class="card">
+    <h3>📁 ניצור תיקיית פרויקט</h3>
+    <div class="step"><div class="step-n">1</div><div class="step-body"><h4>צרו תיקייה חדשה</h4><p>קליק ימני על שולחן העבודה ← <span class="hl">New Folder</span> ← קראו לה <span class="hl">my-commercial</span></p></div></div>
+    <div class="step"><div class="step-n">2</div><div class="step-body"><h4>פתחו את Claude Code ובחרו את התיקייה</h4><p>בלשונית <span class="hl">Code</span>, לחצו <span class="hl">Select folder</span> ובחרו את התיקייה שיצרתם</p></div></div>
+  </div>
+
+  <div class="card">
+    <h3>🗣️ פשוט אמרו שלום</h3>
+    <p>זה כל מה שצריך לכתוב בהתחלה:</p>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>היי קלוד</p></div>
+    </div>
+    <p style="margin-top:12px">Claude יגיב, ישאל על הפרויקט ואולי יבקש הרשאות לקבצים. <span class="hl">תענו בחופשיות, כאילו אתם מדברים עם אדם.</span></p>
+  </div>
+
+  <div class="card">
+    <h3>🔐 הרשאות גישה לתיקייה</h3>
+    <p>Claude יבקש אישור לגשת לתיקייה שבחרתם. לפני שתלחצו "אני מאשר", וודאו שאין בתיקייה:</p>
+    <div class="insight" style="margin:12px 0 0">
+      <h3>⚠️ בדקו לפני שתאשרו</h3>
+      <ul style="padding-right:18px">
+        <li style="margin-bottom:4px;color:var(--cream2)">קבצי סיסמאות או מפתחות API (קבצים בשם <span class="hl">.env</span>)</li>
+        <li style="margin-bottom:4px;color:var(--cream2)">מסמכים אישיים או עסקיים רגישים</li>
+        <li style="margin-bottom:4px;color:var(--cream2)">פרטי אשראי או פרטים בנקאיים</li>
+      </ul>
+      <p style="margin-top:8px"><span class="hlg">לכן יצרנו תיקייה ריקה וחדשה.</span> בתיקייה ריקה אין מה לדאוג, ואפשר לאשר בביטחון.</p>
+    </div>
+    <p style="margin-top:12px">אחרי האישור, Claude מוכן לעבוד. <span class="hlg">הוא לא קורא כלום בלי שתבקשו</span>, הוא רק מחכה להוראה.</p>
+  </div>
+
+  <div class="card">
+    <h3>💡 טיפים לשיחה טובה</h3>
+    <ul>
+      <li><span class="hlg">היו ספציפיים</span> : "תבנה לי אתר" פחות טוב מ-"תבנה לי דף נחיתה עם כפתור יצירת קשר"</li>
+      <li><span class="hlg">תנו הקשר</span> : ספרו ל-Claude מי אתם ומה המטרה שלכם</li>
+      <li><span class="hlg">שאלו שאלות</span> : אם Claude עושה משהו שאתם לא מבינים, תשאלו!</li>
+      <li><span class="hlg">תהנו</span> : אין טעויות פה, רק ניסויים</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-id="q2">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מה הדרך הכי טובה לדבר עם Claude Code?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">לכתוב לו קוד ולבקש שיתקן</div>
+      <div class="quiz-opt" onclick="qz(this,1)">להסביר מה אני רוצה להשיג, בשפה פשוטה וספציפית</div>
+      <div class="quiz-opt" onclick="qz(this,0)">לשלוח לו תמונות של מה שאני רוצה</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(2)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH3: CLAUDE.md PERSONA -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v3">
+  <div class="ch-tag">שלב 3 מתוך 12</div>
+  <h2 class="ch-h">נותנים ל-Claude פרסונה</h2>
+  <p class="ch-sub">קובץ CLAUDE.md הופך את Claude למומחה קבוע בתחום שלכם</p>
+
+  <div class="insight">
+    <h3>מה זה CLAUDE.md?</h3>
+    <p>דמיינו שאתם שוכרים עובד חדש. ביום הראשון אתם נותנים לו <strong>דף תדריך</strong>: מי אנחנו, איך עובדים פה, מה הסטנדרטים. <strong>CLAUDE.md זה בדיוק זה</strong>. קובץ ש-Claude קורא אוטומטית בתחילת כל שיחה בפרויקט.</p>
+  </div>
+
+  <div class="card">
+    <h3>⚡ שלב 1: הפעילו את init/</h3>
+    <p>Claude Code מגיע עם פקודה מובנית שסורקת את הפרויקט ויוצרת CLAUDE.md חכם באופן אוטומטי:</p>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p dir="ltr">/init</p></div>
+    </div>
+    <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יסרוק את הפרויקט ויבנה קובץ CLAUDE.md בסיסי. הוא כבר יודע את הפורמט הנכון, אין צורך בהוראות נוספות.</p>
+  </div>
+
+  <div class="card">
+    <h3>🎬 שלב 2: הוסיפו פרסונה של במאי פרסומות</h3>
+    <p>אחרי שה-init/ יצר את הקובץ הבסיסי, בקשו מ-Claude להוסיף את הפרסונה:</p>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תוסיף ל-CLAUDE.md שאתה מומחה בבימוי פרסומות עם ניסיון ב: פיתוח קונספט, סטוריבורד, כתיבת תסריט, צילום, צבע ותאורה, עיצוב סאונד ואפקטים ויזואליים. אתה עובד עם כל הפורמטים: טלוויזיה, דיגיטל, רשתות חברתיות. תמיד חושב על קהל היעד ועל המסר של המותג. תכתוב את הקובץ באנגלית</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔍 איך זה נראה בסוף?</h3>
+    <div class="preview"><div class="preview-top"><div class="preview-dots"><i></i><i></i><i></i></div><span class="preview-label">CLAUDE.md</span></div><div class="preview-body"><span class="d"># Commercial Directing Expert</span>
+
+You are an expert in commercial directing.
+
+<span class="d">## Your expertise:</span>
+- <span class="o">Pre-production</span>: Concepts, storyboards, scripts
+- <span class="o">Production</span>: Camera, lighting, talent direction
+- <span class="o">Post-production</span>: Edit, color, sound, VFX
+- <span class="o">Strategy</span>: Brand messaging, audiences
+- <span class="o">Formats</span>: TV, digital, social</div></div>
+    <p style="margin-top:10px"><span class="hlg">מהרגע הזה, בכל פעם שתפתחו את הפרויקט, Claude כבר יהיה "בתפקיד" של במאי פרסומות!</span></p>
+  </div>
+
+  <div class="card">
+    <h3>🧠 למה זה חשוב?</h3>
+    <ul>
+      <li>בלי CLAUDE.md: קלוד הוא "עוזר כללי". עם CLAUDE.md: הוא <span class="hl">מומחה בתחום שלכם</span></li>
+      <li>הוא קורא את הקובץ <strong>בתחילת כל שיחה</strong>, לא צריך לחזור על עצמכם</li>
+      <li>אפשר לערוך ולעדכן בכל זמן. Claude ישתנה בהתאם מיד</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-id="q3">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מה התפקיד של קובץ CLAUDE.md?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">קובץ שצריך לשלוח ל-Anthropic</div>
+      <div class="quiz-opt" onclick="qz(this,0)">קובץ קוד ש-Claude מריץ</div>
+      <div class="quiz-opt" onclick="qz(this,1)">תדריך ש-Claude קורא בכל שיחה כדי לדעת איך להתנהג בפרויקט</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(3)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH4: SKILLS -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v4">
+  <div class="ch-tag">שלב 4 מתוך 12</div>
+  <h2 class="ch-h">Skills: ללמד את Claude תפקיד חדש</h2>
+  <p class="ch-sub">כותבים פעם אחת מה לעשות. Claude יבצע בכל פעם שיצטרך.</p>
+
+  <div class="insight">
+    <h3>⚡ מה זה Skill?</h3>
+    <p>דמיינו שאתם <strong>מדריכים עוזר חדש</strong>: "כשמישהו מבקש שתכתוב תסריט לפרסומת, תעשה כך וכך, שלב אחרי שלב." כתבתם את זה פעם אחת במחברת שלו, ומעכשיו הוא יודע. <strong>Skill זה בדיוק הדף הרלוונטי במחברת</strong>. קובץ הוראות שמלמד את קלוד קוד מה לעשות בתרחיש מסוים.</p>
+  </div>
+
+  <div class="card">
+    <h3>💡 דוגמה קונקרטית: Skill בשם "script"</h3>
+    <p>נגיד שיצרנו Skill בשם <span class="hl">script</span>. בלי ה-Skill הזה, בכל פעם שתרצו תסריט תצטרכו להסביר הכל מחדש:</p>
+    <div class="say" style="margin:12px 0 8px">
+      <span class="say-label" style="color:var(--rose)">😓 בלי Skill: כל פעם מחדש</span>
+      <div class="say-content"><p>"תחפש פרסומות מובילות בתחום, תסכם מה עובד, תכתוב תסריט מקורי ל-30 שניות, תחלק לסצנות, תוסיף הנחיות לצלם..."</p></div>
+    </div>
+    <div class="say" style="margin:8px 0">
+      <span class="say-label" style="color:var(--emerald)">✨ עם Skill בשם script: מילה אחת</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p dir="ltr">/script</p></div>
+    </div>
+    <p style="font-size:.85rem;color:var(--cream3)">Claude יודע בדיוק מה לעשות כי לימדתם אותו פעם אחת. כל פרסומת עתידית מתחילה במילה אחת.</p>
+  </div>
+
+  <div class="card">
+    <h3>🚀 איך Claude מפעיל Skill?</h3>
+    <p>זה הדבר החשוב ביותר להבין: <strong>Claude מפעיל Skill בשתי דרכים:</strong></p>
+    <div class="insight" style="margin:12px 0 0">
+      <h3>דרך 1: אתם מבקשים ישירות</h3>
+      <p>כותבים <span class="hl">script/</span> בצ'אט. Claude מבין שזו פקודה ומריץ את היכולת.</p>
+    </div>
+    <div class="insight" style="margin:8px 0 0;border-color:rgba(16,185,129,.2)">
+      <h3 style="color:var(--emerald)">דרך 2: Claude מחליט לבד ✨</h3>
+      <p>אתם כותבים <span class="hl">"בואו ניצור תסריט"</span> בלי שום פקודה. Claude קורא את ההוראות של ה-Skill, מבין שזה מתאים לבקשה, ומפעיל אותו לבד. <strong>אין צורך לזכור אף פקודה!</strong></p>
+    </div>
+    <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Skills הם <span class="hlg">הוראות שהמשמעות שלהן ברורה ל-Claude</span>, לא רק מקשי קיצור. הוא יפעיל אותם כשהם רלוונטיים, גם בלי /.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔧 איך Skill נראה מבפנים?</h3>
+    <p>קובץ טקסט פשוט עם שם, תיאור, ושלבי ביצוע:</p>
+    <div class="preview"><div class="preview-top"><div class="preview-dots"><i></i><i></i><i></i></div><span class="preview-label">SKILL.md (דוגמה)</span></div><div class="preview-body"><span class="d"># .claude/skills/script/SKILL.md</span>
+---
+name: script
+description: Research inspiration and write an
+  original commercial script from a concept
+---
+
+<span class="o">## Steps</span>
+1. Ask the user for the commercial concept
+2. Search web for relevant ad examples
+3. Write original script (no copying)
+4. Break into scenes with camera notes</div></div>
+    <p style="margin-top:8px;font-size:.85rem;color:var(--cream3)">ה-<span class="hl">description</span> הוא מה שעוזר ל-Claude להבין מתי להפעיל את ה-Skill אוטומטית.</p>
+  </div>
+
+  <div class="card">
+    <h3>🧠 התוכנית שלנו</h3>
+    <p>בסוף כל שלב נבקש מ-Claude לכתוב Skill לאותו שלב. בסוף המסע יהיו לכם:</p>
+    <div class="skill"><h4>/script</h4><p>מחפש השראה וכותב תסריט מקורי</p></div>
+    <div class="skill"><h4>/storyboard</h4><p>מייצר סטוריבורד עם Gemini Flash Image</p></div>
+    <div class="skill"><h4>/voiceover</h4><p>כותב ומקליט קריינות עם ElevenLabs</p></div>
+    <div class="skill"><h4>/animate</h4><p>הופך תמונות לקליפי וידאו עם xAI Grok</p></div>
+    <div class="skill"><h4>Remotion (Skill רשמי)</h4><p>ספריית עריכת וידאו עם Skill רשמי מוכן להורדה</p></div>
+    <p style="margin-top:12px"><span class="hlg">פרסומת הבאה? תגידו "בואו נעשה פרסומת" וזהו. Claude יפעיל את כל ה-Skills לבד.</span></p>
+  </div>
+
+  <div class="quiz" data-id="q11">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">איך Claude מפעיל Skill?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">רק כשכותבים /פקודה בדיוק</div>
+      <div class="quiz-opt" onclick="qz(this,1)">גם כשכותבים /פקודה וגם כשהוא מבין מהשיחה שה-Skill רלוונטי</div>
+      <div class="quiz-opt" onclick="qz(this,0)">רק אוטומטית, לא עם פקודות</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(4)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH5: CREATIVE SEARCH + SCRIPT -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v5">
+  <div class="ch-tag">שלב 5 מתוך 12</div>
+  <h2 class="ch-h">Claude מחפש השראה וכותב תסריט</h2>
+  <p class="ch-sub">אתם נותנים קונספט. Claude חוקר ברשת וכותב תסריט מקורי.</p>
+
+  <div class="insight">
+    <h3>Claude = עוזר הפקה שמכין את הקרקע לפני הצילומים</h3>
+    <p>כל במאי טוב מגיע לצילומים אחרי שחקר. Claude עושה את החקר בשבילכם: מחפש פרסומות מובילות בתחום, מנתח מה עובד ולמה, <span class="hl">ואז כותב תסריט מקורי</span> שמבוסס על מה שהוכח בשוק. אתם מגיעים עם קונספט, Claude מגיע עם תסריט מוכן לצילום.</p>
+  </div>
+
+  <div class="card">
+    <h3>🎬 תנו קונספט, Claude עושה את השאר</h3>
+    <p>זה כל מה שצריך לכתוב:</p>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני רוצה פרסומת לקרם Anti-AI. הקונספט: קרם שמורחים על הפנים והופך אותם ללא ניתנים לזיהוי על ידי אלגוריתמי AI. אווירה קולנועית ומסתורית, קצת פאנקית. תחפש ברשת השראה מפרסומות קוסמטיקה ופרטיות דיגיטלית מ-2024-2026, אבל אל תעתיק שום קונספט קיים. תכתוב תסריט מקורי ופרק ל-6 סצנות עם תיאורי מצלמה לכל סצנה. תכתוב את התסריט באנגלית. שמור את התסריט לקובץ script.md בפרויקט כדי שנוכל להתייחס אליו בשלבים הבאים</p></div>
+    </div>
+    <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יחפש ברשת, יקרא, ויכתוב תסריט. <span class="hlg">אתם לא כתבתם אף שורה.</span></p>
+  </div>
+
+  <div class="card">
+    <h3>🌐 מה Claude עושה מאחורי הקלעים?</h3>
+    <ul>
+      <li>מחפש <span class="hl">פרסומות מובילות</span> ומנתח מה עושה אותן מוצלחות</li>
+      <li>מזהה <span class="hl">דפוסי עריכה, אווירה וטון</span> שמתאימים לבקשה שלכם</li>
+      <li>כותב תסריט <span class="hl">מקורי לחלוטין</span>, בלי להעתיק</li>
+      <li>מפרק ל-6 סצנות עם הוראות מצלמה מפורטות</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>💡 לא אהבתם? תנו פידבק</h3>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>התסריט טוב אבל האירוניה לא חזקה מספיק. תעשה את סצנת הגילוי יותר קיצונית ומצחיקה, ותוסיף רגע של שקט לפני שהיא מורחת את הקרם.</p></div>
+    </div>
+    <p style="margin-top:8px"><span class="hlg">אפשר להמשיך לדייק עד שהתסריט מרגיש בדיוק נכון.</span></p>
+  </div>
+
+  <div class="card" style="border-color:rgba(232,113,74,.2)">
+    <h3>⚡ עכשיו: צרו את ה-Skill הראשון, script</h3>
+    <p>התסריט מוכן. עכשיו הפכו את כל התהליך לפקודה חוזרת:</p>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם script בתיקיית הפרויקט הנוכחי. תעיין ב-claude code guide ותיצור SKILL.md תקני שיודע לקבל קונספט, לחפש ברשת ולהחזיר תסריט מלא עם סצנות. ה-Skill צריך לשמור את התסריט לקובץ script.md בפרויקט כדי שנוכל להתייחס אליו בשלבים הבאים.</p></div>
+    </div>
+    <p style="margin-top:8px"><span class="hlg">מעכשיו: /script וקונספט. זהו.</span></p>
+  </div>
+
+  <div class="quiz" data-id="q4">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מה Claude עושה כשמבקשים ממנו להכין תסריט לפרסומת?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">מעתיק פרסומת קיימת ומשנה קצת</div>
+      <div class="quiz-opt" onclick="qz(this,1)">חוקר ברשת לצורך השראה וכותב תסריט מקורי</div>
+      <div class="quiz-opt" onclick="qz(this,0)">מבקש מכם לכתוב את התסריט בעצמכם</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(5)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH6: WHAT IS API -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v6">
+  <div class="ch-tag">שלב 6 מתוך 12</div>
+  <h2 class="ch-h">מה זה API?</h2>
+  <p class="ch-sub">המילה שנשמעת מפחידה אבל ממש לא צריכה להיות</p>
+
+  <div class="insight">
+    <h3>🍽️ API = מלצר במסעדה</h3>
+    <p>דמיינו שאתם יושבים במסעדה. אתם לא נכנסים למטבח ומבשלים לבד, נכון?</p>
+    <p style="margin-top:8px"><strong>אתם</strong> (הלקוח) → אומרים ל<strong>מלצר</strong> (API) מה אתם רוצים → <strong>המטבח</strong> (השרת) מכין את זה → <strong>המלצר</strong> מביא לכם את התוצאה.</p>
+    <p style="margin-top:8px"><span class="hl">API זה בדיוק אותו דבר:</span> דרך מסודרת לבקש שירות ממחשב אחר ולקבל תוצאה.</p>
+  </div>
+
+  <div class="api-flow">
+    <div class="api-step u">
+      <div class="api-si">🧑</div>
+      <div class="api-sb"><div class="api-st">אתם</div><div class="api-sd">"אני רוצה תמונה"</div></div>
+    </div>
+    <div class="api-arr">↓</div>
+    <div class="api-step c">
+      <div class="api-si">🤖</div>
+      <div class="api-sb"><div class="api-st">Claude Code</div><div class="api-sd">מקבל את הבקשה ושולח ל-API</div></div>
+    </div>
+    <div class="api-arr">↓</div>
+    <div class="api-step a">
+      <div class="api-si">🌐</div>
+      <div class="api-sb"><div class="api-st">API, המלצר</div><div class="api-sd">מעביר את ההזמנה למטבח (שרת AI)</div></div>
+    </div>
+    <div class="api-arr">↓</div>
+    <div class="api-step s">
+      <div class="api-si">🏭</div>
+      <div class="api-sb"><div class="api-st">שרת AI</div><div class="api-sd">יוצר את התמונה</div></div>
+    </div>
+    <div class="api-arr">↓</div>
+    <div class="api-step a">
+      <div class="api-si">🌐</div>
+      <div class="api-sb"><div class="api-st">API מחזיר</div><div class="api-sd">שולח את התוצאה בחזרה ל-Claude</div></div>
+    </div>
+    <div class="api-arr">↓</div>
+    <div class="api-step u win">
+      <div class="api-si">🎉</div>
+      <div class="api-sb"><div class="api-st">אתם מקבלים תמונה!</div><div class="api-sd">Claude הביא לכם את התוצאה</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔑 מה זה API Key (מפתח)?</h3>
+    <p>חוזרים למסעדה: כשאתם יושבים, מקבלים <span class="hl">מספר שולחן</span>. המלצר לא יקח הזמנה בלי לדעת לאיזה שולחן להביא את האוכל ולמי לשלוח את החשבון. ה-API Key הוא בדיוק זה: מספר שמזהה אתכם, מאפשר לכם לקבל שירות, ומאפשר לשירות לדעת כמה לחייב.</p>
+    <p style="margin-top:8px">בלי מפתח? המלצר מנומס, אבל לא יזיז אצבע. <strong>Claude יסביר לכם בדיוק איפה נרשמים ואיך מקבלים מפתח לכל שירות.</strong></p>
+  </div>
+
+  <div class="card">
+    <h3>🛠️ ה-APIs שנשתמש בהם</h3>
+    <ul>
+      <li><span class="hl">Gemini (Google)</span> : "המטבח" שיוצר תמונות סטוריבורד</li>
+      <li><span class="hl">ElevenLabs</span> : "המטבח" שיוצר קריינות בקול אנושי</li>
+      <li><span class="hl">xAI Grok</span> : "המטבח" שהופך תמונות לאנימציית וידאו</li>
+    </ul>
+    <p style="margin-top:10px"><span class="hlg">אתם לא צריכים להבין איך ה-APIs עובדים מבפנים.</span> Claude כותב את כל הקוד. אתם רק צריכים לדעת שהם קיימים.</p>
+    <p style="margin-top:8px">לעריכה הסופית נשתמש ב-<span class="hl">Remotion</span>: ספריית React שמאפשרת לבנות סרטוני וידאו בקוד. זה לא API, אין עלות, ו-Claude עושה את כל הקוד.</p>
+  </div>
+
+  <div class="card">
+    <h3>💰 כמה זה עולה?</h3>
+    <p style="margin-bottom:12px">שימוש ב-APIs עולה כסף, אבל <span class="hlg">הרבה פחות ממה שחושבים</span>. הנה הפירוט לפרויקט בודד של פרסומת (6 תמונות, 6 קריינות, 6 קליפי וידאו):</p>
+    <table style="width:100%;font-size:.85rem;border-collapse:collapse;margin-bottom:14px">
+      <tr style="border-bottom:1px solid var(--bg4)">
+        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">Claude Pro</span> (מנוי חודשי)</td>
+        <td style="padding:8px 4px;text-align:left;color:var(--cream);font-family:var(--mono);font-weight:600">$20/חודש</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--bg4)">
+        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">Gemini Flash Image</span> (תמונת 4K אחת, 6 פאנלים)</td>
+        <td style="padding:8px 4px;text-align:left;color:var(--cream);font-family:var(--mono);font-weight:600">~$0.15*</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--bg4)">
+        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">ElevenLabs</span> (6 קריינות קצרות)</td>
+        <td style="padding:8px 4px;text-align:left;color:var(--emerald);font-family:var(--mono);font-weight:600">חינם*</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--bg4)">
+        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">xAI Grok</span> (6 קליפי וידאו, 6 שנ' כל אחד)</td>
+        <td style="padding:8px 4px;text-align:left;color:var(--cream);font-family:var(--mono);font-weight:600">~$1.80</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--bg4)">
+        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">Remotion</span> (ספריית React לעריכה, לא API)</td>
+        <td style="padding:8px 4px;text-align:left;color:var(--emerald);font-family:var(--mono);font-weight:600">חינם</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 4px;color:var(--cream);font-weight:700">סה"כ עלות API לפרסומת</td>
+        <td style="padding:10px 4px;text-align:left;color:var(--gold);font-family:var(--mono);font-weight:700;font-size:.95rem">~$3-5</td>
+      </tr>
+    </table>
+    <p style="font-size:.78rem;color:var(--stone)">* Gemini Flash Image: ~$0.15 לתמונת 4K אחת (6 פאנלים). יש שכבה חינמית (500 בקשות/יום) אבל היא מוגבלת. ElevenLabs נותן 10,000 תווים/חודש בחינם (מספיק לכמה פרסומות). xAI נותן $25 קרדיט בהרשמה, מספיק לעשרות פרויקטים. לשימוש מסחרי ב-ElevenLabs צריך מנוי Starter ($5/חודש).</p>
+    <p style="font-size:.78rem;color:var(--stone);margin-top:4px">המחירים נכונים למרץ 2026 ועשויים להשתנות.</p>
+  </div>
+
+  <div class="quiz" data-id="q5">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מה הכי מתאר את API?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">שפת תכנות שצריך ללמוד</div>
+      <div class="quiz-opt" onclick="qz(this,0)">תוכנה שמתקינים על המחשב</div>
+      <div class="quiz-opt" onclick="qz(this,1)">דרך מסודרת לבקש שירות ממחשב אחר. כמו מלצר שלוקח הזמנה ומביא אוכל</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(6)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH7: PYTHON + VENV -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v7">
+  <div class="ch-tag">שלב 7 מתוך 12</div>
+  <h2 class="ch-h">Claude מתקין Python וסביבה נקייה</h2>
+  <p class="ch-sub">אתם לא מתקינים כלום. Claude עושה הכל. אתם רק מבינים למה.</p>
+
+  <div class="insight">
+    <h3>🧹 מה זה "סביבה וירטואלית"?</h3>
+    <p>דמיינו שיש לכם סטודיו ליצירת אמנות. כל פרויקט צריך חומרים שונים: צבעי שמן, אקריליק, פסטל.</p>
+    <p style="margin-top:8px">אם תשימו הכל באותה מגירה, יהיה בלאגן. <strong>סביבה וירטואלית (venv)</strong> זה כמו <span class="hl">חדר נפרד לכל פרויקט</span>. כל פרויקט מקבל את הכלים שלו. שום דבר לא מתערבב.</p>
+  </div>
+
+  <div class="card">
+    <h3>🚀 בקשו מ-Claude לעשות הכל</h3>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תתקין Python אם צריך, ותיצור סביבה וירטואלית (venv) נפרדת לפרויקט שלנו. את החבילות נתקין בכל שלב בנפרד לפי מה שנצטרך. תוודא שה-venv פעיל ומוכן.</p></div>
+    </div>
+    <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יתקין הכל לבד. אתם רק תראו מה הוא עושה ותאשרו כשהוא מבקש.</p>
+  </div>
+
+  <div class="card">
+    <h3>💡 למה זה חשוב?</h3>
+    <ul>
+      <li>בלי סביבה נפרדת: חבילות מפרויקט אחד יכולות <span class="hl">לשבור</span> פרויקט אחר</li>
+      <li>עם סביבה נפרדת: כל פרויקט הוא <span class="hlg">עולם עצמאי</span></li>
+      <li>אם משהו השתבש, פשוט מוחקים את הסביבה ומתחילים מחדש</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-id="q6">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">למה צריך "סביבה וירטואלית" לפרויקט?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">כדי שהמחשב יעבוד יותר מהר</div>
+      <div class="quiz-opt" onclick="qz(this,1)">כדי שכל פרויקט יהיה בחדר נפרד ודברים לא יתערבבו</div>
+      <div class="quiz-opt" onclick="qz(this,0)">כי Python דורש את זה</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(7)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH8: STORYBOARD -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v8">
+  <div class="ch-tag">שלב 8 מתוך 12</div>
+  <h2 class="ch-h">יוצרים סטוריבורד עם Gemini Flash</h2>
+  <p class="ch-sub">התסריט כבר מוכן. עכשיו Claude מייצר תמונות פוטוריאליסטיות לכל סצנה.</p>
+
+  <div class="insight">
+    <h3>🎬 מה זה סטוריבורד?</h3>
+    <p><strong>סטוריבורד</strong> הוא סדרת תמונות שמראות כל סצנה בפרסומת. אנחנו נשתמש ב-<span class="hl">Gemini Flash Image 3.1</span> (preview) ליצירת <strong>תמונת 4K אחת</strong> שמחולקת ל-6 פאנלים ביחס 16:9, שנראים כמו פריימים אמיתיים מסרטון.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔑 קודם: מפתח API של Google</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של Google Gemini ליצירת תמונות. תסביר לי צעד אחרי צעד איפה נרשמים ואיך מקבלים מפתח. תן לי קישור ישיר.</p></div></div>
+    <p style="margin-top:8px;font-size:.82rem;color:var(--stone)">Claude ינחה אתכם: נכנסים ל-Google AI Studio, יוצרים מפתח, מעתיקים אותו.</p>
+  </div>
+
+  <div class="card">
+    <h3>📝 בקשו מ-Claude לבנות את המחולל</h3>
+    <p>התסריט כבר מוכן מהשלב הקודם. עכשיו Claude יבנה מחולל שממיר אותו לתמונות:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>קודם תשלוף את התיעוד הרשמי העדכני של Gemini Flash Image 3.1 (preview) כדי לוודא שאתה משתמש ב-API הנכון. אחר כך תבנה סקריפט Python שמייצר סטוריבורד מהתסריט שכתבנו. הסקריפט יצור תמונת 4K אחת שמחולקת ל-6 פאנלים בפריסת רשת 3x2, כל פאנל ביחס 16:9, ללא שוליים ומסגרות בין הפאנלים. כל פאנל מייצג סצנה אחת מהתסריט. תשמור את התמונה בתיקיית storyboard_output.
+
+המפתח שלי: [הדביקו את המפתח שלכם כאן]</p></div></div>
+  </div>
+
+  <div class="card">
+    <h3>▶️ להריץ את הסקריפט</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תריץ את הסקריפט של הסטוריבורד</p></div></div>
+    <p style="margin-top:8px">Claude יריץ ואחרי כמה שניות תקבלו תמונת 4K אחת עם 6 פאנלים בפריסת 3x2.</p>
+  </div>
+
+  <div class="card" style="border-color:rgba(232,113,74,.2)">
+    <h3>⚡ עכשיו: צרו Skill /storyboard</h3>
+    <p>הפכו את כל התהליך לפקודה אחת לשימוש עתידי:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם storyboard שמריץ את כל תהליך יצירת הסטוריבורד. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
+    <p style="margin-top:8px"><span class="hlg">פרסומת הבאה: פשוט כותבים /storyboard.</span></p>
+  </div>
+
+  <div class="quiz" data-id="q7">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">איזה מודל AI נשתמש בו ליצירת תמונות הסטוריבורד?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">DALL-E של OpenAI</div>
+      <div class="quiz-opt" onclick="qz(this,1)">Gemini Flash Image 3.1 של Google</div>
+      <div class="quiz-opt" onclick="qz(this,0)">Midjourney</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(8)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH9: VOICEOVER -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v9">
+  <div class="ch-tag">שלב 9 מתוך 12</div>
+  <h2 class="ch-h">מייצרים קריינות עם AI</h2>
+  <p class="ch-sub">Claude כותב את הטקסט, AI מקריא אותו. אתם רק בוחרים את הטון.</p>
+
+  <div class="insight">
+    <h3>🎙️ קול בלי קריין</h3>
+    <p>פעם, כדי להקליט קריינות הייתם צריכים אולפן, קריין, מיקרופון, ושעות של הקלטה. היום Claude כותב את הטקסט בהתאם לתסריט שהוא יצר, ו-AI מקריא אותו בצורה טבעית לחלוטין.</p>
+  </div>
+
+  <div class="card">
+    <h3>🔑 מפתח API של ElevenLabs</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של ElevenLabs ליצירת קריינות. תסביר לי איך נרשמים ומקבלים מפתח. גם תגיד לי מה כולל החינמי.</p></div></div>
+  </div>
+
+  <div class="card">
+    <h3>📝 Claude כותב ומקליט</h3>
+    <p>Claude כבר כתב תסריט בשלב הקודם. עכשיו הוא ייצור ממנו קריינות:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תבנה סקריפט Python שמייצר קריינות באמצעות ElevenLabs API. תיקח את התסריט שכתבת לסטוריבורד ותכתוב משפטי קריינות מתאימים לכל פאנל. אני רוצה קול גברי, רגוע, סגנון דוקומנטרי. תשמור כל קובץ MP3 בנפרד ותתן סיכום של משך כל קריינות.
+
+המפתח שלי: [הדביקו את המפתח כאן]</p></div></div>
+    <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">שימו לב: לא כתבתם אף משפט קריינות. <span class="hlg">Claude כתב את הטקסט בהתאם לתסריט שהוא יצר.</span> אם לא אהבתם משהו, פשוט אמרו לו לשנות.</p>
+  </div>
+
+  <div class="card">
+    <h3>💡 מה לשים לב</h3>
+    <ul>
+      <li><span class="hl">סימני פיסוק שולטים בקצב</span> : שלוש נקודות (...) = השהייה</li>
+      <li><span class="hl">בחירת קול</span> : ElevenLabs מציע מאות קולות, אפשר גם לשכפל קול שלכם</li>
+      <li><span class="hl">שתיקה מכוונת</span> : לא כל פאנל חייב קריינות. לפעמים שתיקה חזקה יותר</li>
+      <li><span class="hl">אתם מאשרים</span> : Claude מציע, אתם אומרים "מעולה" או "תשנה את הטון של פאנל 3"</li>
+    </ul>
+  </div>
+
+  <div class="quiz" data-id="q8">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מי כותב את טקסט הקריינות?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">אני כותב כל משפט בעצמי</div>
+      <div class="quiz-opt" onclick="qz(this,1)">Claude כותב בהתאם לתסריט, ואני מאשר או מבקש שינויים</div>
+      <div class="quiz-opt" onclick="qz(this,0)">ה-AI של ElevenLabs ממציא לבד</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <div class="card" style="border-color:rgba(232,113,74,.2)">
+    <h3>⚡ עכשיו: צרו Skill /voiceover</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם voiceover שמריץ את כל תהליך יצירת הקריינות. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
+    <p style="margin-top:8px"><span class="hlg">פעם הבאה: /voiceover ומסיימים.</span></p>
+  </div>
+
+  <button class="btn btn-go" onclick="done(9)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH10: ANIMATION -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v10">
+  <div class="ch-tag">שלב 10 מתוך 12</div>
+  <h2 class="ch-h">תמונות שמתעוררות לחיים</h2>
+  <p class="ch-sub">Claude מחליט על תנועות מצלמה וקצב. אתם רק מאשרים.</p>
+
+  <div class="insight">
+    <h3>🎬 מתמונה לסרטון</h3>
+    <p>דמיינו שיש לכם תמונה של בן אדם יושב ליד מחשב. עכשיו דמיינו שהתמונה <strong>מתעוררת לחיים</strong>: הוא מניד ראש, האור משתנה, המסך מהבהב. <strong>זה בדיוק מה ש-AI יודע לעשות.</strong></p>
+  </div>
+
+  <div class="card">
+    <h3>🔑 מפתח API</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של xAI (Grok) ליצירת וידאו מתמונות. תסביר לי איך נרשמים ומקבלים מפתח.</p></div></div>
+  </div>
+
+  <div class="card">
+    <h3>📝 Claude עושה אנימציה הכל</h3>
+    <p>Claude כבר מכיר את התסריט והסטוריבורד. הוא יחליט על תנועות מצלמה מתאימות לכל סצנה:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תבנה סקריפט Python שלוקח כל תמונת פאנל מהסטוריבורד והופך אותה לקליפ וידאו באמצעות xAI Grok Imagine API. תחליט על תנועת מצלמה, קצב ומשך מתאימים לכל סצנה בהתאם לתסריט שכתבת. תשמור כל קליפ בנפרד בתיקיית animated.</p></div></div>
+    <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יחליט לבד: דולי, push-in, מצלמה קבועה. <span class="hlg">הוא מבין מה מתאים לכל סצנה כי הוא כתב את התסריט.</span></p>
+  </div>
+
+  <div class="card">
+    <h3>💡 אתם עדיין הבמאי</h3>
+    <p>Claude מציע, אתם מאשרים. אם משהו לא מתאים, תגידו:</p>
+    <ul>
+      <li>"תשנה את פאנל 3 למצלמה קבועה במקום דולי"</li>
+      <li>"תאט את פאנל 5, אני רוצה יותר מתח"</li>
+      <li>"תוסיף עוד שנייה לפאנל האחרון"</li>
+    </ul>
+    <p style="margin-top:8px"><span class="hlg">אתם לא צריכים לדעת מונחים קולנועיים.</span> אפשר גם לומר "תעשה את זה יותר איטי" או "אני רוצה שירגישו עצב פה".</p>
+  </div>
+
+  <div class="card" style="border-color:rgba(232,113,74,.2)">
+    <h3>⚡ עכשיו: צרו Skill /animate</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם animate שמריץ את כל תהליך האנימציה מתמונות לקליפי וידאו. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
+    <p style="margin-top:8px"><span class="hlg">פעם הבאה: /animate ומסיימים.</span></p>
+  </div>
+
+  <div class="quiz" data-id="q9">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מה התפקיד שלכם בתהליך האנימציה?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">לכתוב הוראות מצלמה מפורטות לכל פאנל</div>
+      <div class="quiz-opt" onclick="qz(this,1)">לאשר את מה ש-Claude מציע, או לבקש שינויים בשפה פשוטה</div>
+      <div class="quiz-opt" onclick="qz(this,0)">לערוך את הווידאו בתוכנת עריכה</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(10)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH11: REMOTION -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v11">
+  <div class="ch-tag">שלב 11 מתוך 12</div>
+  <h2 class="ch-h">עריכה סופית עם Remotion</h2>
+  <p class="ch-sub">מחברים הכל לסרטון מוגמר. Claude בונה לכם חדר עריכה</p>
+
+  <div class="insight">
+    <h3>✂️ מה זה Remotion?</h3>
+    <p>Remotion היא <strong>ספריית React</strong> שמאפשרת לבנות סרטוני וידאו בקוד. זה לא API ואין עלות נוספת. דמיינו Premiere Pro שבו במקום לגרור קליפים, <span class="hl">Claude כותב קוד שמרכיב את הסרטון</span> בדיוק כפי שאמרתם לו.</p>
+  </div>
+
+  <div class="card" style="border-color:rgba(232,113,74,.2)">
+    <h3>⚡ קודם: התקינו את ה-Skill הרשמי של Remotion</h3>
+    <p>ל-Remotion יש <strong>Skill רשמי</strong> ל-Claude Code שמכיר את הספרייה לעומק. לפני הכל, בקשו מ-Claude להוריד ולהתקין אותו:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תחפש ותתקין את ה-Skill הרשמי של Remotion ל-Claude Code. תעיין בתיעוד ובאתר של Remotion כדי למצוא את הקישור הנכון.</p></div></div>
+    <p style="margin-top:8px;font-size:.85rem;color:var(--cream3)">Claude ימצא את ה-Skill הרשמי, יוריד ויתקין אותו. אחרי זה הוא יכיר את Remotion ברמת מומחה.</p>
+  </div>
+
+  <div class="card">
+    <h3>🎬 עכשיו: בקשו מ-Claude לבנות את הפרסומת</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תבנה פרויקט Remotion שמרכיב את כל החומרים שיצרנו לפרסומת אחת:
+1. תשים את 6 קליפי הוידאו ברצף
+2. תוסיף את קבצי הקריינות עם תזמון נכון
+3. תוסיף מעברים חלקים בין הקליפים (fade)
+4. תוסיף כרטיס סיום עם לוגו וטאגליין
+5. תייצא ל-MP4
+
+התוצאה צריכה להיות פרסומת של כ-34 שניות.</p></div></div>
+  </div>
+
+  <div class="card">
+    <h3>🖥️ צפייה בתוצאה</h3>
+    <p>Remotion מגיע עם Studio לצפייה בזמן אמת:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תפעיל את Remotion Studio כדי שאוכל לצפות בתצוגה מקדימה של הפרסומת</p></div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔄 התאמות ושינויים</h3>
+    <p>לא מרוצים ממשהו? פשוט אמרו:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תשנה את המעבר בין פאנל 3 ל-4 ל-fade to black של שנייה אחת. ותוסיף טקסט שמופיע בפאנל 4 אחרי 2 שניות.</p></div></div>
+    <p style="margin-top:8px;font-size:.85rem;color:var(--cream3)">כמו לשבת עם עורך. רק שמבצע שינויים תוך שניות.</p>
+  </div>
+
+  <div class="quiz" data-id="q10">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">מה נכון על Remotion?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">API בתשלום שמייצר וידאו בענן</div>
+      <div class="quiz-opt" onclick="qz(this,1)">ספריית React חינמית שמאפשרת לבנות וידאו בקוד</div>
+      <div class="quiz-opt" onclick="qz(this,0)">תוכנת עריכה שמתקינים כמו Premiere</div>
+    </div>
+    <div class="quiz-msg"></div>
+  </div>
+  <button class="btn btn-go" onclick="done(11)">לשלב הבא</button>
+</div>
+
+<!-- ═════════════════════════════════════════════════ -->
+<!-- CH12: FINAL BOSS -->
+<!-- ═════════════════════════════════════════════════ -->
+<div class="view" id="v12">
+  <div class="ch-tag">שלב 12 מתוך 12 : הבוס הסופי!</div>
+  <h2 class="ch-h">הפרסומת שלכם</h2>
+  <p class="ch-sub">עכשיו אתם יודעים הכל. הגיע הזמן ליצור פרסומת משלכם מאפס!</p>
+
+  <div class="card" style="border-color:rgba(232,113,74,.15);background:linear-gradient(135deg,rgba(232,113,74,.05),var(--bg2))">
+    <span class="card-icon">🏆</span>
+    <h3>אתגר הבוס הסופי</h3>
+    <p>בחרו מוצר או רעיון שאתם אוהבים, תנו ל-Claude קונספט, והוא יעשה את כל השאר:</p>
+    <ol style="padding-right:20px;margin-top:12px">
+      <li style="margin-bottom:6px"><strong>פתחו פרויקט חדש</strong> : תיקייה חדשה + CLAUDE.md</li>
+      <li style="margin-bottom:6px"><strong>תנו קונספט</strong> : "אני רוצה פרסומת ל..." (משפט אחד מספיק!)</li>
+      <li style="margin-bottom:6px"><strong>/script</strong> : Claude חוקר ברשת וכותב תסריט מקורי</li>
+      <li style="margin-bottom:6px"><strong>/storyboard</strong> : Claude מייצר סטוריבורד מהתסריט</li>
+      <li style="margin-bottom:6px"><strong>/voiceover</strong> : Claude כותב ומקליט קריינות</li>
+      <li style="margin-bottom:6px"><strong>/animate</strong> : Claude עושה אנימציה עם תנועות מצלמה מתאימות</li>
+      <li style="margin-bottom:6px"><strong>/render</strong> : Claude מרכיב לווידאו סופי</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>📋 רשימת מה שלמדתם</h3>
+    <ul>
+      <li>✅ מה זה Claude Code ואיך מורידים את האפליקציה</li>
+      <li>✅ איך נותנים קונספט ו-Claude עושה את השאר</li>
+      <li>✅ מה זה CLAUDE.md ואיך נותנים ל-Claude פרסונה</li>
+      <li>✅ איך יוצרים Skills: פקודות שמפעילות תהליכים בלחיצה אחת</li>
+      <li>✅ /script: Claude מחפש השראה ברשת וכותב תסריט מקורי</li>
+      <li>✅ מה זה API: המלצר שמביא הזמנות ממטבחים שונים</li>
+      <li>✅ למה צריך סביבה וירטואלית: חדר נקי לכל פרויקט</li>
+      <li>✅ /storyboard: Claude מייצר סטוריבורד עם Gemini Flash Image 3.1</li>
+      <li>✅ /voiceover: Claude כותב ומקליט קריינות עם ElevenLabs</li>
+      <li>✅ /animate: Claude עושה אנימציה לתמונות עם xAI Grok</li>
+      <li>✅ Remotion: ספריית React לעריכה עם Skill רשמי, חינם לחלוטין</li>
+    </ul>
+  </div>
+
+  <div class="card" style="text-align:center;padding:40px">
+    <div style="font-size:3.5rem;margin-bottom:14px">🎬🏆🎉</div>
+    <h3 style="font-size:1.4rem;margin-bottom:10px">סיימתם את המסע!</h3>
+    <p style="font-size:1rem;color:var(--cream3)">עכשיו אתם יודעים להשתמש ב-Claude Code ליצירת פרסומות AI.<br>הכלי הכי חזק שלכם הוא <span class="hl">הדמיון שלכם</span>.</p>
+    <button class="btn btn-go" onclick="finale()" style="margin-top:20px;font-size:1.05rem">🏆 השלמת המסע!</button>
+    <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06)">
+      <p style="font-size:.85rem;color:var(--stone);margin-bottom:12px">רוצים לעבור שוב על החומר? אפשר לאפס הכל ולהתחיל מחדש:</p>
+      <button class="btn" onclick="resetAll()" style="background:var(--bg3);border:1px solid var(--bg4);color:var(--cream3);font-size:.85rem;padding:10px 24px">↺ התחל מחדש</button>
+    </div>
+  </div>
+</div>
+
+</main>
+</div>
+
+<!-- ACHIEVEMENT -->
+<div class="ach" id="ach">
+  <div class="ach-i" id="achI">🏅</div>
+  <div>
+    <div class="ach-t" id="achT">הישג חדש!</div>
+    <div class="ach-d" id="achD">תיאור</div>
+  </div>
+</div>
+
+<canvas id="confetti"></canvas>
+
+<script src="app.js"></script>
+</body>
+</html>
