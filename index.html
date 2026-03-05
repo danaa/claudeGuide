@@ -337,10 +337,10 @@ description: Research inspiration and write an
   <div class="card">
     <h3>🧠 התוכנית שלנו</h3>
     <p>בסוף כל שלב נבקש מ-Claude לכתוב Skill לאותו שלב. בסוף המסע יהיו לכם:</p>
-    <div class="skill"><h4>/script</h4><p>מחפש השראה וכותב תסריט מקורי</p></div>
-    <div class="skill"><h4>/storyboard</h4><p>מייצר סטוריבורד עם Gemini Flash Image</p></div>
-    <div class="skill"><h4>/voiceover</h4><p>כותב ומקליט קריינות עם ElevenLabs</p></div>
-    <div class="skill"><h4>/animate</h4><p>הופך תמונות לקליפי וידאו עם xAI Grok</p></div>
+    <div class="skill"><h4>script/</h4><p>מחפש השראה וכותב תסריט מקורי</p></div>
+    <div class="skill"><h4>storyboard/</h4><p>מייצר סטוריבורד עם Nano Banana 2 על fal.ai</p></div>
+    <div class="skill"><h4>voiceover/</h4><p>כותב ומקליט קריינות עם ElevenLabs</p></div>
+    <div class="skill"><h4>animate/</h4><p>הופך תמונות לקליפי וידאו עם xAI Grok</p></div>
     <div class="skill"><h4>Remotion (Skill רשמי)</h4><p>ספריית עריכת וידאו עם Skill רשמי מוכן להורדה</p></div>
     <p style="margin-top:12px"><span class="hlg">פרסומת הבאה? תגידו "בואו נעשה פרסומת" וזהו. Claude יפעיל את כל ה-Skills לבד.</span></p>
   </div>
@@ -407,16 +407,17 @@ description: Research inspiration and write an
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
       <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם script בתיקיית הפרויקט הנוכחי. תעיין ב-claude code guide ותיצור SKILL.md תקני שיודע לקבל קונספט, לחפש ברשת ולהחזיר תסריט מלא עם סצנות. ה-Skill צריך לשמור את התסריט לקובץ script.md בפרויקט כדי שנוכל להתייחס אליו בשלבים הבאים.</p></div>
     </div>
-    <p style="margin-top:8px"><span class="hlg">מעכשיו: /script וקונספט. זהו.</span></p>
+    <p style="margin-top:8px"><span class="hlg">מעכשיו: script/ וקונספט. זהו.</span></p>
+    <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בפרויקט בנתיב: <code dir="ltr">.claude/skills/script/SKILL.md</code></p>
   </div>
 
   <div class="quiz" data-id="q4">
     <div class="quiz-head">🎯 בדיקת הבנה</div>
-    <p class="quiz-q">מה Claude עושה כשמבקשים ממנו להכין תסריט לפרסומת?</p>
+    <p class="quiz-q">איפה נמצא קובץ ה-Skill של script שיצרנו?</p>
     <div class="quiz-opts">
-      <div class="quiz-opt" onclick="qz(this,0)">מעתיק פרסומת קיימת ומשנה קצת</div>
-      <div class="quiz-opt" onclick="qz(this,1)">חוקר ברשת לצורך השראה וכותב תסריט מקורי</div>
-      <div class="quiz-opt" onclick="qz(this,0)">מבקש מכם לכתוב את התסריט בעצמכם</div>
+      <div class="quiz-opt" onclick="qz(this,0)">בתיקיית הבית של המחשב</div>
+      <div class="quiz-opt" onclick="qz(this,1)" dir="ltr">.claude/skills/script/SKILL.md</div>
+      <div class="quiz-opt" onclick="qz(this,0)">בתיקיית Claude Code הגלובלית</div>
     </div>
     <div class="quiz-msg"></div>
   </div>
@@ -434,7 +435,7 @@ description: Research inspiration and write an
   <div class="insight">
     <h3>🍽️ API = מלצר במסעדה</h3>
     <p>דמיינו שאתם יושבים במסעדה. אתם לא נכנסים למטבח ומבשלים לבד, נכון?</p>
-    <p style="margin-top:8px"><strong>אתם</strong> (הלקוח) → אומרים ל<strong>מלצר</strong> (API) מה אתם רוצים → <strong>המטבח</strong> (השרת) מכין את זה → <strong>המלצר</strong> מביא לכם את התוצאה.</p>
+    <p style="margin-top:8px"><strong>אתם</strong> (הלקוח) ← אומרים ל<strong>מלצר</strong> (API) מה אתם רוצים ← <strong>המטבח</strong> (השרת) מכין את זה ← <strong>המלצר</strong> מביא לכם את התוצאה.</p>
     <p style="margin-top:8px"><span class="hl">API זה בדיוק אותו דבר:</span> דרך מסודרת לבקש שירות ממחשב אחר ולקבל תוצאה.</p>
   </div>
 
@@ -479,7 +480,7 @@ description: Research inspiration and write an
   <div class="card">
     <h3>🛠️ ה-APIs שנשתמש בהם</h3>
     <ul>
-      <li><span class="hl">Gemini (Google)</span> : "המטבח" שיוצר תמונות סטוריבורד</li>
+      <li><span class="hl">fal.ai (Nano Banana 2)</span> : "המטבח" שיוצר תמונות סטוריבורד</li>
       <li><span class="hl">ElevenLabs</span> : "המטבח" שיוצר קריינות בקול אנושי</li>
       <li><span class="hl">xAI Grok</span> : "המטבח" שהופך תמונות לאנימציית וידאו</li>
     </ul>
@@ -496,7 +497,7 @@ description: Research inspiration and write an
         <td style="padding:8px 4px;text-align:left;color:var(--cream);font-family:var(--mono);font-weight:600">$20/חודש</td>
       </tr>
       <tr style="border-bottom:1px solid var(--bg4)">
-        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">Gemini Flash Image</span> (תמונת 4K אחת, 6 פאנלים)</td>
+        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">fal.ai Nano Banana 2</span> (תמונת 4K אחת, 6 פאנלים)</td>
         <td style="padding:8px 4px;text-align:left;color:var(--cream);font-family:var(--mono);font-weight:600">~$0.15*</td>
       </tr>
       <tr style="border-bottom:1px solid var(--bg4)">
@@ -516,7 +517,7 @@ description: Research inspiration and write an
         <td style="padding:10px 4px;text-align:left;color:var(--gold);font-family:var(--mono);font-weight:700;font-size:.95rem">~$3-5</td>
       </tr>
     </table>
-    <p style="font-size:.78rem;color:var(--stone)">* Gemini Flash Image: ~$0.15 לתמונת 4K אחת (6 פאנלים). יש שכבה חינמית (500 בקשות/יום) אבל היא מוגבלת. ElevenLabs נותן 10,000 תווים/חודש בחינם (מספיק לכמה פרסומות). xAI נותן $25 קרדיט בהרשמה, מספיק לעשרות פרויקטים. לשימוש מסחרי ב-ElevenLabs צריך מנוי Starter ($5/חודש).</p>
+    <p style="font-size:.78rem;color:var(--stone)">* fal.ai Nano Banana 2: ~$0.16 לתמונת 4K אחת (6 פאנלים). תשלום לפי שימוש, ללא מנוי. ElevenLabs נותן 10,000 תווים/חודש בחינם (מספיק לכמה פרסומות). xAI נותן $25 קרדיט בהרשמה, מספיק לעשרות פרויקטים. לשימוש מסחרי ב-ElevenLabs צריך מנוי Starter ($5/חודש).</p>
     <p style="font-size:.78rem;color:var(--stone);margin-top:4px">המחירים נכונים למרץ 2026 ועשויים להשתנות.</p>
   </div>
 
@@ -556,6 +557,11 @@ description: Research inspiration and write an
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יתקין הכל לבד. אתם רק תראו מה הוא עושה ותאשרו כשהוא מבקש.</p>
   </div>
 
+  <div class="insight" style="border-color:rgba(245,158,11,.2)">
+    <h3 style="color:var(--gold)">⚠️ Claude יבקש הרשאות, זה נורמלי לחלוטין</h3>
+    <p>במהלך ההתקנה Claude יבקש אישור להריץ פקודות בתיקיית הפרויקט. תראו הודעות כמו "האם לאשר הרצת פקודה?". <strong>אשרו הכל.</strong> זה חלק מהתהליך. Claude מבקש רשות לפני כל פעולה כדי שתמיד תהיו בשליטה.</p>
+  </div>
+
   <div class="card">
     <h3>💡 למה זה חשוב?</h3>
     <ul>
@@ -583,32 +589,43 @@ description: Research inspiration and write an
 <!-- ═════════════════════════════════════════════════ -->
 <div class="view" id="v8">
   <div class="ch-tag">שלב 8 מתוך 12</div>
-  <h2 class="ch-h">יוצרים סטוריבורד עם Gemini Flash</h2>
+  <h2 class="ch-h">יוצרים סטוריבורד עם Nano Banana 2</h2>
   <p class="ch-sub">התסריט כבר מוכן. עכשיו Claude מייצר תמונות פוטוריאליסטיות לכל סצנה.</p>
 
   <div class="insight">
     <h3>🎬 מה זה סטוריבורד?</h3>
-    <p><strong>סטוריבורד</strong> הוא סדרת תמונות שמראות כל סצנה בפרסומת. אנחנו נשתמש ב-<span class="hl">Gemini Flash Image 3.1</span> (preview) ליצירת <strong>תמונת 4K אחת</strong> שמחולקת ל-6 פאנלים ביחס 16:9, שנראים כמו פריימים אמיתיים מסרטון.</p>
+    <p><strong>סטוריבורד</strong> הוא סדרת תמונות שמראות כל סצנה בפרסומת. אנחנו נשתמש ב-<span class="hl">Nano Banana 2</span> של fal.ai ליצירת <strong>תמונת 4K אחת</strong> שמחולקת ל-6 פאנלים ביחס 16:9, שנראים כמו פריימים אמיתיים מסרטון.</p>
   </div>
 
   <div class="card">
-    <h3>🔑 קודם: מפתח API של Google</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של Google Gemini ליצירת תמונות. תסביר לי צעד אחרי צעד איפה נרשמים ואיך מקבלים מפתח. תן לי קישור ישיר.</p></div></div>
-    <p style="margin-top:8px;font-size:.82rem;color:var(--stone)">Claude ינחה אתכם: נכנסים ל-Google AI Studio, יוצרים מפתח, מעתיקים אותו.</p>
+    <h3>🔑 קודם: מפתח API של fal.ai</h3>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של fal.ai כדי להשתמש במודל Nano Banana 2 ליצירת תמונות. תסביר לי צעד אחרי צעד איך נרשמים, איך מוסיפים אמצעי תשלום, ואיך יוצרים מפתח API בחשבון. תן לי קישור ישיר לדף המפתחות.</p></div></div>
+    <p style="margin-top:8px;font-size:.82rem;color:var(--stone)">Claude ינחה אתכם: נכנסים ל-fal.ai, יוצרים חשבון, מוסיפים כרטיס אשראי (pay-per-use, אין מנוי), ומקבלים מפתח.</p>
   </div>
 
   <div class="card">
-    <h3>📝 בקשו מ-Claude לבנות את המחולל</h3>
-    <p>התסריט כבר מוכן מהשלב הקודם. עכשיו Claude יבנה מחולל שממיר אותו לתמונות:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>קודם תשלוף את התיעוד הרשמי העדכני של Gemini Flash Image 3.1 (preview) כדי לוודא שאתה משתמש ב-API הנכון. אחר כך תבנה סקריפט Python שמייצר סטוריבורד מהתסריט שכתבנו. הסקריפט יצור תמונת 4K אחת שמחולקת ל-6 פאנלים בפריסת רשת 3x2, כל פאנל ביחס 16:9, ללא שוליים ומסגרות בין הפאנלים. כל פאנל מייצג סצנה אחת מהתסריט. תשמור את התמונה בתיקיית storyboard_output.
-
-המפתח שלי: [הדביקו את המפתח שלכם כאן]</p></div></div>
+    <h3>🔐 שמרו את המפתח בקובץ env.</h3>
+    <p>לא שומרים מפתחות ישירות בקוד. במקום זה, Claude ייצור קובץ <span class="hl">env.</span> שמרכז את כל המפתחות במקום אחד בטוח:</p>
+    <div class="say">
+      <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
+      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור קובץ env. בתיקיית הפרויקט עם קבועים לכל מפתחות ה-API שנשתמש בהם במסע: FAL_KEY, ELEVENLABS_API_KEY, XAI_API_KEY. תוסיף גם env לקובץ gitignore כדי שהמפתחות לא יעלו ל-GitHub.</p></div>
+    </div>
+    <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">אחרי שקלוד ייצור את הקובץ, פתחו אותו ב<strong>Notepad</strong>: לחצו ימני על הקובץ <code dir="ltr">.env</code> בתיקיית הפרויקט, בחרו "פתח עם" ← Notepad. תראו שורה כזו:</p>
+    <div class="preview" style="margin:8px 0"><div class="preview-top"><div class="preview-dots"><i></i><i></i><i></i></div><span class="preview-label">.env</span></div><div class="preview-body"><span class="d">FAL_KEY=</span>הדביקו כאן את המפתח של fal.ai
+<span class="d">ELEVENLABS_API_KEY=</span>ימולא בשלב הקריינות
+<span class="d">XAI_API_KEY=</span>ימולא בשלב האנימציה</div></div>
+    <p style="font-size:.82rem;color:var(--stone)">הדביקו את מפתח fal.ai אחרי סימן ה-<code>=</code>, שמרו, וסגרו. זהו.</p>
   </div>
 
   <div class="card">
-    <h3>▶️ להריץ את הסקריפט</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תריץ את הסקריפט של הסטוריבורד</p></div></div>
-    <p style="margin-top:8px">Claude יריץ ואחרי כמה שניות תקבלו תמונת 4K אחת עם 6 פאנלים בפריסת 3x2.</p>
+    <h3>📝 בקשו מ-Claude לבנות את הסקריפט</h3>
+    <p>התסריט כבר מוכן מהשלב הקודם. עכשיו Claude יבנה סקריפט שיוצר את תמונת הסטוריבורד:</p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>חפש ברשת את התיעוד הרשמי של fal.ai למודל fal-ai/nano-banana-2 כדי לוודא שאתה משתמש ב-API הנכון. אחר כך תתקין את הספריות פייתון שצריך ותבנה סקריפט שקורא ל-API פעם אחת בלבד ומייצר בעזרתו תמונה אחת שהיא סטוריבורד מהתסריט שכתבנו. ה-API יצור תמונת 4K אחת שמחולקת ל-6 פאנלים בפריסת גריד 3x2, כל פאנל ביחס 16:9, ללא שוליים ומסגרות בין הפאנלים. כל פאנל מייצג סצנה אחת מהתסריט. אתה צריך לכתוב ל-API פרומפט מתאים בתצורת JSON שייצור את תמונת הגריד הזו, כל אובייקט מתאר פריים אחד. תשמור את התמונה בתיקיית storyboard_output יחד עם הפרומפט שיצרת. המפתח נמצא בקובץ .env תחת FAL_KEY.</p></div></div>
+  </div>
+
+  <div class="insight" style="border-color:rgba(16,185,129,.2)">
+    <h3 style="color:var(--emerald)">👀 עכשיו לכו לתיקייה ותסתכלו</h3>
+    <p>Claude יריץ את הסקריפט לבד. אחרי כמה שניות פתחו את תיקיית <span class="hl">storyboard_output</span> בפרויקט. תמצאו שם את תמונת הסטוריבורד ואת הפרומפט שנשמר. אם התמונה נראית טוב, מצוין. אם לא, תגידו ל-Claude מה לשנות ותבקשו ממנו להריץ שוב.</p>
   </div>
 
   <div class="card" style="border-color:rgba(232,113,74,.2)">
@@ -616,15 +633,16 @@ description: Research inspiration and write an
     <p>הפכו את כל התהליך לפקודה אחת לשימוש עתידי:</p>
     <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם storyboard שמריץ את כל תהליך יצירת הסטוריבורד. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
     <p style="margin-top:8px"><span class="hlg">פרסומת הבאה: פשוט כותבים /storyboard.</span></p>
+    <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/storyboard/SKILL.md</code></p>
   </div>
 
   <div class="quiz" data-id="q7">
     <div class="quiz-head">🎯 בדיקת הבנה</div>
-    <p class="quiz-q">איזה מודל AI נשתמש בו ליצירת תמונות הסטוריבורד?</p>
+    <p class="quiz-q">פתחו את תיקיית הפרויקט. מה שם קובץ ה-Python שנוצר לסטוריבורד?</p>
     <div class="quiz-opts">
-      <div class="quiz-opt" onclick="qz(this,0)">DALL-E של OpenAI</div>
-      <div class="quiz-opt" onclick="qz(this,1)">Gemini Flash Image 3.1 של Google</div>
-      <div class="quiz-opt" onclick="qz(this,0)">Midjourney</div>
+      <div class="quiz-opt" onclick="qz(this,0)" dir="ltr">storyboard_output.jpg</div>
+      <div class="quiz-opt" onclick="qz(this,1)" dir="ltr">storyboard.py (או שם דומה)</div>
+      <div class="quiz-opt" onclick="qz(this,0)" dir="ltr">SKILL.md</div>
     </div>
     <div class="quiz-msg"></div>
   </div>
@@ -682,6 +700,7 @@ description: Research inspiration and write an
     <h3>⚡ עכשיו: צרו Skill /voiceover</h3>
     <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם voiceover שמריץ את כל תהליך יצירת הקריינות. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
     <p style="margin-top:8px"><span class="hlg">פעם הבאה: /voiceover ומסיימים.</span></p>
+    <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/voiceover/SKILL.md</code></p>
   </div>
 
   <button class="btn btn-go" onclick="done(9)">לשלב הבא</button>
@@ -727,6 +746,7 @@ description: Research inspiration and write an
     <h3>⚡ עכשיו: צרו Skill /animate</h3>
     <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם animate שמריץ את כל תהליך האנימציה מתמונות לקליפי וידאו. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
     <p style="margin-top:8px"><span class="hlg">פעם הבאה: /animate ומסיימים.</span></p>
+    <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/animate/SKILL.md</code></p>
   </div>
 
   <div class="quiz" data-id="q9">
@@ -833,7 +853,7 @@ description: Research inspiration and write an
       <li>✅ /script: Claude מחפש השראה ברשת וכותב תסריט מקורי</li>
       <li>✅ מה זה API: המלצר שמביא הזמנות ממטבחים שונים</li>
       <li>✅ למה צריך סביבה וירטואלית: חדר נקי לכל פרויקט</li>
-      <li>✅ /storyboard: Claude מייצר סטוריבורד עם Gemini Flash Image 3.1</li>
+      <li>✅ /storyboard: Claude מייצר סטוריבורד עם Nano Banana 2 על fal.ai</li>
       <li>✅ /voiceover: Claude כותב ומקליט קריינות עם ElevenLabs</li>
       <li>✅ /animate: Claude עושה אנימציה לתמונות עם xAI Grok</li>
       <li>✅ Remotion: ספריית React לעריכה עם Skill רשמי, חינם לחלוטין</li>
