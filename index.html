@@ -163,7 +163,7 @@
     <p>זה כל מה שצריך לכתוב בהתחלה:</p>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>היי קלוד</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">היי קלוד</p><p class="say-en" style="display:none">Hi Claude</p></div>
     </div>
     <p style="margin-top:12px">Claude יגיב, ישאל על הפרויקט ואולי יבקש הרשאות לקבצים. <span class="hl">תענו בחופשיות, כאילו אתם מדברים עם אדם.</span></p>
   </div>
@@ -234,7 +234,7 @@
     <p>אחרי שה-init/ יצר את הקובץ הבסיסי, בקשו מ-Claude להוסיף את הפרסונה:</p>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תוסיף ל-CLAUDE.md שאתה מומחה בבימוי פרסומות עם ניסיון ב: פיתוח קונספט, סטוריבורד, כתיבת תסריט, צילום, צבע ותאורה, עיצוב סאונד ואפקטים ויזואליים. אתה עובד עם כל הפורמטים: טלוויזיה, דיגיטל, רשתות חברתיות. תמיד חושב על קהל היעד ועל המסר של המותג. תכתוב את הקובץ באנגלית</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תוסיף ל-CLAUDE.md שאתה מומחה בבימוי פרסומות עם ניסיון ב: פיתוח קונספט, סטוריבורד, כתיבת תסריט, צילום, צבע ותאורה, עיצוב סאונד ואפקטים ויזואליים. אתה עובד עם כל הפורמטים: טלוויזיה, דיגיטל, רשתות חברתיות. תמיד חושב על קהל היעד ועל המסר של המותג. תכתוב את הקובץ באנגלית</p><p class="say-en" style="display:none">Add to CLAUDE.md that you are an expert in commercial directing with experience in: concept development, storyboards, scriptwriting, cinematography, color grading, lighting, sound design, and visual effects. You work across all formats: TV, digital, social media. Always think about the target audience and the brand message. Write the file in English.</p></div>
     </div>
   </div>
 
@@ -373,10 +373,10 @@ description: Research inspiration and write an
 
   <div class="card">
     <h3>🎬 תנו קונספט, Claude עושה את השאר</h3>
-    <p>זה כל מה שצריך לכתוב:</p>
+    <p>זה כל מה שצריך לכתוב. <span class="hlg">אתם יכולים לבחור כל קונספט שתרצו, זו רק דוגמה:</span></p>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני רוצה פרסומת לקרם Anti-AI. הקונספט: קרם שמורחים על הפנים והופך אותם ללא ניתנים לזיהוי על ידי אלגוריתמי AI. אווירה קולנועית ומסתורית, קצת פאנקית. תחפש ברשת השראה מפרסומות קוסמטיקה ופרטיות דיגיטלית מ-2024-2026, אבל אל תעתיק שום קונספט קיים. תכתוב תסריט מקורי ופרק ל-6 סצנות עם תיאורי מצלמה לכל סצנה. תכתוב את התסריט באנגלית. שמור את התסריט לקובץ script.md בפרויקט כדי שנוכל להתייחס אליו בשלבים הבאים</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">אני רוצה פרסומת לקרם Anti-AI. הקונספט: קרם שמורחים על הפנים והופך אותם ללא ניתנים לזיהוי על ידי אלגוריתמי AI. אווירה קולנועית ומסתורית, קצת פאנקית. תחפש ברשת השראה מפרסומות קוסמטיקה ופרטיות דיגיטלית מ-2024-2026, אבל אל תעתיק שום קונספט קיים. תכתוב תסריט מקורי ופרק ל-6 סצנות עם תיאורי מצלמה לכל סצנה. תכתוב את התסריט באנגלית. שמור את התסריט לקובץ script.md בפרויקט כדי שנוכל להתייחס אליו בשלבים הבאים</p><p class="say-en" style="display:none">I want a commercial for Anti-AI cream. The concept: a cream you apply to your face that makes it unrecognizable by AI facial recognition algorithms. Cinematic and mysterious mood, a bit punk. Search the web for inspiration from cosmetics and digital privacy ads from 2024-2026, but don't copy any existing concept. Write an original script and break it into 6 scenes with camera directions for each scene. Write the script in English. Save the script to a script.md file in the project so we can reference it in later stages.</p></div>
     </div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יחפש ברשת, יקרא, ויכתוב תסריט. <span class="hlg">אתם לא כתבתם אף שורה.</span></p>
   </div>
@@ -395,7 +395,7 @@ description: Research inspiration and write an
     <h3>💡 לא אהבתם? תנו פידבק</h3>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>התסריט טוב אבל האירוניה לא חזקה מספיק. תעשה את סצנת הגילוי יותר קיצונית ומצחיקה, ותוסיף רגע של שקט לפני שהיא מורחת את הקרם.</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">התסריט טוב אבל האירוניה לא חזקה מספיק. תעשה את סצנת הגילוי יותר קיצונית ומצחיקה, ותוסיף רגע של שקט לפני שהיא מורחת את הקרם.</p><p class="say-en" style="display:none">The script is good but the irony isn't strong enough. Make the reveal scene more extreme and funny, and add a moment of silence right before she applies the cream.</p></div>
     </div>
     <p style="margin-top:8px"><span class="hlg">אפשר להמשיך לדייק עד שהתסריט מרגיש בדיוק נכון.</span></p>
   </div>
@@ -405,18 +405,22 @@ description: Research inspiration and write an
     <p>התסריט מוכן. עכשיו הפכו את כל התהליך לפקודה חוזרת:</p>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם script בתיקיית הפרויקט הנוכחי. תעיין ב-claude code guide ותיצור SKILL.md תקני שיודע לקבל קונספט, לחפש ברשת ולהחזיר תסריט מלא עם סצנות. ה-Skill צריך לשמור את התסריט לקובץ script.md בפרויקט כדי שנוכל להתייחס אליו בשלבים הבאים.</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם script בתיקיית הפרויקט הנוכחי. תעיין ב-claude code guide ותיצור SKILL.md תקני שיודע לקבל קונספט, לחפש ברשת ולהחזיר תסריט מלא עם סצנות. ה-Skill צריך לשמור את התסריט לקובץ script.md בפרויקט כדי שנוכל להתייחס אליו בשלבים הבאים.</p><p class="say-en" style="display:none">Create a Skill named script in the current project folder. Consult the claude code guide and create a standard SKILL.md that knows how to receive a concept, search the web, and return a full script with scenes. The Skill should save the script to a script.md file in the project so we can reference it in later stages.</p></div>
     </div>
-    <p style="margin-top:8px"><span class="hlg">מעכשיו: script/ וקונספט. זהו.</span></p>
+    <p style="margin-top:8px"><span class="hlg">מעכשיו: /script וקונספט. זהו.</span></p>
     <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בפרויקט בנתיב: <code dir="ltr">.claude/skills/script/SKILL.md</code></p>
+    <div class="insight" style="margin-top:14px;border-color:rgba(56,189,248,.2)">
+      <h3 style="color:var(--sky)">💡 מה זה "claude code guide"?</h3>
+      <p>בתוך Claude Code יש <strong>סוכן מיוחד</strong> שיודע הכל על היכולות העדכניות של Claude Code. הוא כמו עמית עבודה שמתמחה בתחום ותמיד מעודכן. כשאתם מבקשים מ-Claude "תעיין ב-claude code guide", הוא שואל את אותו עמית ומקבל הנחיות מדויקות ועדכניות, בלי שאתם צריכים לדעת כלום על הטכניקה מאחורי זה. אפשר גם לשאול אותו ישירות: "שאל את claude code guide איך עובדים Skills".</p>
+    </div>
   </div>
 
   <div class="quiz" data-id="q4">
     <div class="quiz-head">🎯 בדיקת הבנה</div>
-    <p class="quiz-q">איפה נמצא קובץ ה-Skill של script שיצרנו?</p>
+    <p class="quiz-q">איפה נמצא קובץ ה-Skill של script שיצרנו? (רמז: תסתכלו בתיקיית הפרויקט שלכם)</p>
     <div class="quiz-opts">
       <div class="quiz-opt" onclick="qz(this,0)">בתיקיית הבית של המחשב</div>
-      <div class="quiz-opt" onclick="qz(this,1)" dir="ltr">.claude/skills/script/SKILL.md</div>
+      <div class="quiz-opt" onclick="qz(this,1)">בתיקיית הפרויקט, בנתיב <span dir="ltr">.claude/skills/script/SKILL.md</span></div>
       <div class="quiz-opt" onclick="qz(this,0)">בתיקיית Claude Code הגלובלית</div>
     </div>
     <div class="quiz-msg"></div>
@@ -552,7 +556,7 @@ description: Research inspiration and write an
     <h3>🚀 בקשו מ-Claude לעשות הכל</h3>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תתקין Python אם צריך, ותיצור סביבה וירטואלית (venv) נפרדת לפרויקט שלנו. את החבילות נתקין בכל שלב בנפרד לפי מה שנצטרך. תוודא שה-venv פעיל ומוכן.</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תתקין Python אם צריך, ותיצור סביבה וירטואלית (venv) נפרדת לפרויקט שלנו. את החבילות נתקין בכל שלב בנפרד לפי מה שנצטרך. תוודא שה-venv פעיל ומוכן.</p><p class="say-en" style="display:none">Install Python if needed, and create a separate virtual environment (venv) for our project. We'll install packages at each stage separately based on what we need. Make sure the venv is active and ready.</p></div>
     </div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יתקין הכל לבד. אתם רק תראו מה הוא עושה ותאשרו כשהוא מבקש.</p>
   </div>
@@ -599,7 +603,7 @@ description: Research inspiration and write an
 
   <div class="card">
     <h3>🔑 קודם: מפתח API של fal.ai</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של fal.ai כדי להשתמש במודל Nano Banana 2 ליצירת תמונות. תסביר לי צעד אחרי צעד איך נרשמים, איך מוסיפים אמצעי תשלום, ואיך יוצרים מפתח API בחשבון. תן לי קישור ישיר לדף המפתחות.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">אני צריך מפתח API של fal.ai כדי להשתמש במודל Nano Banana 2 ליצירת תמונות. תסביר לי צעד אחרי צעד איך נרשמים, איך מוסיפים אמצעי תשלום, ואיך יוצרים מפתח API בחשבון. תן לי קישור ישיר לדף המפתחות.</p><p class="say-en" style="display:none">I need a fal.ai API key to use the Nano Banana 2 model for image generation. Explain step by step how to register, how to add a payment method, and how to create an API key. Give me a direct link to the keys page.</p></div></div>
     <p style="margin-top:8px;font-size:.82rem;color:var(--stone)">Claude ינחה אתכם: נכנסים ל-fal.ai, יוצרים חשבון, מוסיפים כרטיס אשראי (pay-per-use, אין מנוי), ומקבלים מפתח.</p>
   </div>
 
@@ -608,7 +612,7 @@ description: Research inspiration and write an
     <p>לא שומרים מפתחות ישירות בקוד. במקום זה, Claude ייצור קובץ <span class="hl">env.</span> שמרכז את כל המפתחות במקום אחד בטוח:</p>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור קובץ env. בתיקיית הפרויקט עם קבועים לכל מפתחות ה-API שנשתמש בהם במסע: FAL_KEY, ELEVENLABS_API_KEY, XAI_API_KEY. תוסיף גם env לקובץ gitignore כדי שהמפתחות לא יעלו ל-GitHub.</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור קובץ env. בתיקיית הפרויקט עם קבועים לכל מפתחות ה-API שנשתמש בהם במסע: FAL_KEY, ELEVENLABS_API_KEY, XAI_API_KEY. תוסיף גם env לקובץ gitignore כדי שהמפתחות לא יעלו ל-GitHub.</p><p class="say-en" style="display:none">Create a .env file in the project folder with constants for all the API keys we'll use in this journey: FAL_KEY, ELEVENLABS_API_KEY, XAI_API_KEY. Also add .env to .gitignore so the keys don't get pushed to GitHub.</p></div>
     </div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">אחרי שקלוד ייצור את הקובץ, פתחו אותו ב<strong>Notepad</strong>: לחצו ימני על הקובץ <code dir="ltr">.env</code> בתיקיית הפרויקט, בחרו "פתח עם" ← Notepad. תראו שורה כזו:</p>
     <div class="preview" style="margin:8px 0"><div class="preview-top"><div class="preview-dots"><i></i><i></i><i></i></div><span class="preview-label">.env</span></div><div class="preview-body"><span class="d">FAL_KEY=</span>הדביקו כאן את המפתח של fal.ai
@@ -620,7 +624,7 @@ description: Research inspiration and write an
   <div class="card">
     <h3>📝 בקשו מ-Claude לבנות את הסקריפט</h3>
     <p>התסריט כבר מוכן מהשלב הקודם. עכשיו Claude יבנה סקריפט שיוצר את תמונת הסטוריבורד:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>חפש ברשת את התיעוד הרשמי של fal.ai למודל fal-ai/nano-banana-2 כדי לוודא שאתה משתמש ב-API הנכון. אחר כך תתקין את הספריות פייתון שצריך ותבנה סקריפט שקורא ל-API פעם אחת בלבד ומייצר בעזרתו תמונה אחת שהיא סטוריבורד מהתסריט שכתבנו. ה-API יצור תמונת 4K אחת שמחולקת ל-6 פאנלים בפריסת גריד 3x2, כל פאנל ביחס 16:9, ללא שוליים ומסגרות בין הפאנלים. כל פאנל מייצג סצנה אחת מהתסריט. אתה צריך לכתוב ל-API פרומפט מתאים בתצורת JSON שייצור את תמונת הגריד הזו, כל אובייקט מתאר פריים אחד. תשמור את התמונה בתיקיית storyboard_output יחד עם הפרומפט שיצרת. המפתח נמצא בקובץ .env תחת FAL_KEY.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">חפש ברשת את התיעוד הרשמי של fal.ai למודל fal-ai/nano-banana-2 כדי לוודא שאתה משתמש ב-API הנכון. אחר כך תתקין את הספריות פייתון שצריך ותבנה סקריפט שקורא ל-API פעם אחת בלבד ומייצר בעזרתו תמונה אחת שהיא סטוריבורד עקבי מהתסריט שכתבנו. ה-API יצור תמונת 4K אחת שמחולקת ל-6 פאנלים בפריסת גריד 3x2, כל פאנל ביחס 16:9, ללא שוליים ומסגרות בין הפאנלים. כל פאנל מייצג סצנה אחת מהתסריט. אתה צריך לכתוב ל-API פרומפט מתאים בתצורת קובץ JSON שייצור את תמונת הגריד הזו. כל אובייקט מתאר פריים אחד. הסקריפט יטען את הקובץ כך שבפעם הבאה נצטרך לשנות רק את ה-JSON. תשמור את התמונה בתיקיית storyboard_output. המפתח נמצא בקובץ .env תחת FAL_KEY.</p><p class="say-en" style="display:none">Search the web for the official fal.ai documentation for the fal-ai/nano-banana-2 model to make sure you're using the correct API. Then install the required Python libraries and build a script that calls the API only once and generates a single consistent storyboard image from the script we wrote. The API will create one 4K image divided into 6 panels in a 3x2 grid layout, each panel at 16:9 ratio, with no margins or borders between panels. Each panel represents one scene from the script. Write an appropriate JSON file prompt for the API that will generate this grid image. Each object in the JSON describes one frame. The script should load the JSON file so next time we only need to update the JSON. Save the image in the storyboard_output folder. The key is in the .env file under FAL_KEY.</p></div></div>
   </div>
 
   <div class="insight" style="border-color:rgba(16,185,129,.2)">
@@ -631,8 +635,8 @@ description: Research inspiration and write an
   <div class="card" style="border-color:rgba(232,113,74,.2)">
     <h3>⚡ עכשיו: צרו Skill /storyboard</h3>
     <p>הפכו את כל התהליך לפקודה אחת לשימוש עתידי:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם storyboard שמריץ את כל תהליך יצירת הסטוריבורד. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
-    <p style="margin-top:8px"><span class="hlg">פרסומת הבאה: פשוט כותבים /storyboard.</span></p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם storyboard שמריץ את כל תהליך יצירת הסטוריבורד. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p><p class="say-en" style="display:none">Create a Skill named storyboard that runs the entire storyboard creation process. Consult the claude code guide to create a standard SKILL.md.</p></div></div>
+    <p style="margin-top:8px"><span class="hlg">בפעם הבאה שנרצה סטוריבורד לתסריט קיים: פשוט נכתוב storyboard/.</span></p>
     <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/storyboard/SKILL.md</code></p>
   </div>
 
@@ -664,15 +668,13 @@ description: Research inspiration and write an
 
   <div class="card">
     <h3>🔑 מפתח API של ElevenLabs</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של ElevenLabs ליצירת קריינות. תסביר לי איך נרשמים ומקבלים מפתח. גם תגיד לי מה כולל החינמי.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">אני צריך מפתח API של ElevenLabs ליצירת קריינות. תסביר לי איך נרשמים ומקבלים מפתח. גם תגיד לי מה כולל החינמי.</p><p class="say-en" style="display:none">I need an ElevenLabs API key for voiceover generation. Explain how to register and get a key. Also tell me what the free tier includes.</p></div></div>
   </div>
 
   <div class="card">
     <h3>📝 Claude כותב ומקליט</h3>
     <p>Claude כבר כתב תסריט בשלב הקודם. עכשיו הוא ייצור ממנו קריינות:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תבנה סקריפט Python שמייצר קריינות באמצעות ElevenLabs API. תיקח את התסריט שכתבת לסטוריבורד ותכתוב משפטי קריינות מתאימים לכל פאנל. אני רוצה קול גברי, רגוע, סגנון דוקומנטרי. תשמור כל קובץ MP3 בנפרד ותתן סיכום של משך כל קריינות.
-
-המפתח שלי: [הדביקו את המפתח כאן]</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תבנה סקריפט Python שמייצר קריינות באמצעות ElevenLabs API. תיקח את התסריט שכתבת לסטוריבורד ותכתוב משפטי קריינות מתאימים לכל פאנל. אני רוצה קול גברי, רגוע, סגנון דוקומנטרי. תשמור כל קובץ MP3 בנפרד ותתן סיכום של משך כל קריינות. המפתח בקובץ .env תחת ELEVENLABS_API_KEY.</p><p class="say-en" style="display:none">Build a Python script that generates voiceover using the ElevenLabs API. Take the script you wrote for the storyboard and write appropriate voiceover lines for each panel. I want a male voice, calm, documentary style. Save each MP3 file separately and give a summary of each voiceover duration. The key is in the .env file under ELEVENLABS_API_KEY.</p></div></div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">שימו לב: לא כתבתם אף משפט קריינות. <span class="hlg">Claude כתב את הטקסט בהתאם לתסריט שהוא יצר.</span> אם לא אהבתם משהו, פשוט אמרו לו לשנות.</p>
   </div>
 
@@ -698,7 +700,7 @@ description: Research inspiration and write an
   </div>
   <div class="card" style="border-color:rgba(232,113,74,.2)">
     <h3>⚡ עכשיו: צרו Skill /voiceover</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם voiceover שמריץ את כל תהליך יצירת הקריינות. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם voiceover שמריץ את כל תהליך יצירת הקריינות. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p><p class="say-en" style="display:none">Create a Skill named voiceover that runs the entire voiceover creation process. Consult the claude code guide to create a standard SKILL.md.</p></div></div>
     <p style="margin-top:8px"><span class="hlg">פעם הבאה: /voiceover ומסיימים.</span></p>
     <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/voiceover/SKILL.md</code></p>
   </div>
@@ -721,13 +723,13 @@ description: Research inspiration and write an
 
   <div class="card">
     <h3>🔑 מפתח API</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>אני צריך מפתח API של xAI (Grok) ליצירת וידאו מתמונות. תסביר לי איך נרשמים ומקבלים מפתח.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">אני צריך מפתח API של xAI (Grok) ליצירת וידאו מתמונות. תסביר לי איך נרשמים ומקבלים מפתח.</p><p class="say-en" style="display:none">I need an xAI (Grok) API key for generating video from images. Explain how to register and get a key.</p></div></div>
   </div>
 
   <div class="card">
     <h3>📝 Claude עושה אנימציה הכל</h3>
     <p>Claude כבר מכיר את התסריט והסטוריבורד. הוא יחליט על תנועות מצלמה מתאימות לכל סצנה:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תבנה סקריפט Python שלוקח כל תמונת פאנל מהסטוריבורד והופך אותה לקליפ וידאו באמצעות xAI Grok Imagine API. תחליט על תנועת מצלמה, קצב ומשך מתאימים לכל סצנה בהתאם לתסריט שכתבת. תשמור כל קליפ בנפרד בתיקיית animated.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תבנה סקריפט Python שלוקח כל תמונת פאנל מהסטוריבורד והופך אותה לקליפ וידאו באמצעות xAI Grok Imagine API. תחליט על תנועת מצלמה, קצב ומשך מתאימים לכל סצנה בהתאם לתסריט שכתבת. תשמור כל קליפ בנפרד בתיקיית animated.</p><p class="say-en" style="display:none">Build a Python script that takes each panel image from the storyboard and turns it into a video clip using the xAI Grok Imagine API. Decide on appropriate camera movement, pace, and duration for each scene based on the script you wrote. Save each clip separately in the animated folder.</p></div></div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יחליט לבד: דולי, push-in, מצלמה קבועה. <span class="hlg">הוא מבין מה מתאים לכל סצנה כי הוא כתב את התסריט.</span></p>
   </div>
 
@@ -744,7 +746,7 @@ description: Research inspiration and write an
 
   <div class="card" style="border-color:rgba(232,113,74,.2)">
     <h3>⚡ עכשיו: צרו Skill /animate</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תיצור Skill בשם animate שמריץ את כל תהליך האנימציה מתמונות לקליפי וידאו. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם animate שמריץ את כל תהליך האנימציה מתמונות לקליפי וידאו. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p><p class="say-en" style="display:none">Create a Skill named animate that runs the entire animation process from images to video clips. Consult the claude code guide to create a standard SKILL.md.</p></div></div>
     <p style="margin-top:8px"><span class="hlg">פעם הבאה: /animate ומסיימים.</span></p>
     <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/animate/SKILL.md</code></p>
   </div>
@@ -778,32 +780,39 @@ description: Research inspiration and write an
   <div class="card" style="border-color:rgba(232,113,74,.2)">
     <h3>⚡ קודם: התקינו את ה-Skill הרשמי של Remotion</h3>
     <p>ל-Remotion יש <strong>Skill רשמי</strong> ל-Claude Code שמכיר את הספרייה לעומק. לפני הכל, בקשו מ-Claude להוריד ולהתקין אותו:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תחפש ותתקין את ה-Skill הרשמי של Remotion ל-Claude Code. תעיין בתיעוד ובאתר של Remotion כדי למצוא את הקישור הנכון.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תחפש ותתקין את ה-Skill הרשמי של Remotion ל-Claude Code. תעיין בתיעוד ובאתר של Remotion כדי למצוא את הקישור הנכון.</p><p class="say-en" style="display:none">Search for and install the official Remotion Skill for Claude Code. Consult the Remotion documentation and website to find the correct link.</p></div></div>
     <p style="margin-top:8px;font-size:.85rem;color:var(--cream3)">Claude ימצא את ה-Skill הרשמי, יוריד ויתקין אותו. אחרי זה הוא יכיר את Remotion ברמת מומחה.</p>
   </div>
 
   <div class="card">
     <h3>🎬 עכשיו: בקשו מ-Claude לבנות את הפרסומת</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תבנה פרויקט Remotion שמרכיב את כל החומרים שיצרנו לפרסומת אחת:
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תבנה פרויקט Remotion שמרכיב את כל החומרים שיצרנו לפרסומת אחת:
 1. תשים את 6 קליפי הוידאו ברצף
 2. תוסיף את קבצי הקריינות עם תזמון נכון
 3. תוסיף מעברים חלקים בין הקליפים (fade)
 4. תוסיף כרטיס סיום עם לוגו וטאגליין
 5. תייצא ל-MP4
 
-התוצאה צריכה להיות פרסומת של כ-34 שניות.</p></div></div>
+התוצאה צריכה להיות פרסומת של כ-34 שניות.</p><p class="say-en" style="display:none">Build a Remotion project that assembles all the materials we created into one commercial:
+1. Place the 6 video clips in sequence
+2. Add the voiceover files with correct timing
+3. Add smooth transitions between clips (fade)
+4. Add a closing card with logo and tagline
+5. Export to MP4
+
+The result should be a commercial of approximately 34 seconds.</p></div></div>
   </div>
 
   <div class="card">
     <h3>🖥️ צפייה בתוצאה</h3>
     <p>Remotion מגיע עם Studio לצפייה בזמן אמת:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תפעיל את Remotion Studio כדי שאוכל לצפות בתצוגה מקדימה של הפרסומת</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תפעיל את Remotion Studio כדי שאוכל לצפות בתצוגה מקדימה של הפרסומת</p><p class="say-en" style="display:none">Launch Remotion Studio so I can preview the commercial.</p></div></div>
   </div>
 
   <div class="card">
     <h3>🔄 התאמות ושינויים</h3>
     <p>לא מרוצים ממשהו? פשוט אמרו:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p>תשנה את המעבר בין פאנל 3 ל-4 ל-fade to black של שנייה אחת. ותוסיף טקסט שמופיע בפאנל 4 אחרי 2 שניות.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תשנה את המעבר בין פאנל 3 ל-4 ל-fade to black של שנייה אחת. ותוסיף טקסט שמופיע בפאנל 4 אחרי 2 שניות.</p><p class="say-en" style="display:none">Change the transition between panel 3 and 4 to a fade to black of one second. And add text that appears in panel 4 after 2 seconds.</p></div></div>
     <p style="margin-top:8px;font-size:.85rem;color:var(--cream3)">כמו לשבת עם עורך. רק שמבצע שינויים תוך שניות.</p>
   </div>
 

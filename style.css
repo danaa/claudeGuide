@@ -273,6 +273,12 @@ body::before{
   color:var(--claude);letter-spacing:.08em;
   margin-bottom:8px;display:flex;align-items:center;gap:6px;
 }
+.say-tabs{display:flex;gap:4px;margin-bottom:6px}
+.say-tab{font-size:.7rem;padding:2px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--cream3);cursor:pointer;font-family:var(--display);font-weight:600;transition:all .15s}
+.say-tab.active{background:var(--claude);color:#fff;border-color:var(--claude)}
+.say-tab:hover:not(.active){border-color:rgba(255,255,255,.25);color:var(--cream)}
+.say-en{direction:ltr!important;text-align:left}
+
 .say-content{
   position:relative;
   background:rgba(0,0,0,.3);

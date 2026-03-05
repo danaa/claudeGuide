@@ -184,8 +184,23 @@ function ach(id) {
 }
 
 // ── COPY WITH TOOLTIP ──
+// ── LANG TAB SWITCH ──
+function st(btn, lang) {
+  const say = btn.closest('.say');
+  say.querySelectorAll('.say-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const he = say.querySelector('.say-he');
+  const en = say.querySelector('.say-en');
+  if (he) he.style.display = lang === 'he' ? '' : 'none';
+  if (en) en.style.display = lang === 'en' ? '' : 'none';
+}
+
 function sc(btn) {
-  const t = btn.closest('.say-content').querySelector('p').textContent.trim();
+  const content = btn.closest('.say-content');
+  const visible = content.querySelector('.say-en') && content.querySelector('.say-en').style.display !== 'none'
+    ? content.querySelector('.say-en')
+    : content.querySelector('p');
+  const t = visible.textContent.trim();
   navigator.clipboard.writeText(t).then(() => {
     btn.textContent = '✓';
     btn.classList.add('ok');
