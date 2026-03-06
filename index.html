@@ -513,8 +513,8 @@ description: Research inspiration and write an
         <td style="padding:8px 4px;text-align:left;color:var(--cream);font-family:var(--mono);font-weight:600">~$0.15*</td>
       </tr>
       <tr style="border-bottom:1px solid var(--bg4)">
-        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">ElevenLabs</span> (6 קריינות קצרות)</td>
-        <td style="padding:8px 4px;text-align:left;color:var(--emerald);font-family:var(--mono);font-weight:600">חינם*</td>
+        <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">ElevenLabs v3</span> (6 קריינות קצרות, ~500 תווים)</td>
+        <td style="padding:8px 4px;text-align:left;color:var(--emerald);font-family:var(--mono);font-weight:600">~חינם*</td>
       </tr>
       <tr style="border-bottom:1px solid var(--bg4)">
         <td style="padding:8px 4px;color:var(--cream2)"><span class="hl">xAI Grok</span> (6 קליפי וידאו, 6 שנ' כל אחד)</td>
@@ -529,7 +529,7 @@ description: Research inspiration and write an
         <td style="padding:10px 4px;text-align:left;color:var(--gold);font-family:var(--mono);font-weight:700;font-size:.95rem">~$3-5</td>
       </tr>
     </table>
-    <p style="font-size:.78rem;color:var(--stone)">* fal.ai Nano Banana 2: ~$0.16 לתמונת 4K אחת (6 פאנלים). תשלום לפי שימוש, ללא מנוי. ElevenLabs נותן 10,000 תווים/חודש בחינם (מספיק לכמה פרסומות). xAI נותן $25 קרדיט בהרשמה, מספיק לעשרות פרויקטים. לשימוש מסחרי ב-ElevenLabs צריך מנוי Starter ($5/חודש).</p>
+    <p style="font-size:.78rem;color:var(--stone)">* fal.ai Nano Banana 2: ~$0.16 לתמונת 4K אחת (6 פאנלים). תשלום לפי שימוש, ללא מנוי. ElevenLabs v3: $0.21 לכל 1,000 תווים. פרסומת שלמה (6 סצנות, ~500 תווים סה"כ) עולה פחות מ-$0.11. בנוסף, ElevenLabs נותן 10,000 תווים/חודש בחינם, מספיק לעשרות פרסומות. xAI נותן $25 קרדיט בהרשמה, מספיק לעשרות פרויקטים.</p>
     <p style="font-size:.78rem;color:var(--stone);margin-top:4px">המחירים נכונים למרץ 2026 ועשויים להשתנות.</p>
   </div>
 
@@ -626,12 +626,11 @@ description: Research inspiration and write an
     <p>לא שומרים מפתחות ישירות בקוד. במקום זה, Claude ייצור קובץ <span class="hl">env.</span> שמרכז את כל המפתחות במקום אחד בטוח:</p>
     <div class="say">
       <span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span>
-      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור קובץ env. בתיקיית הפרויקט עם קבועים לכל מפתחות ה-API שנשתמש בהם במסע: FAL_KEY, ELEVENLABS_API_KEY, XAI_API_KEY. תוסיף גם env לקובץ gitignore כדי שהמפתחות לא יעלו ל-GitHub.</p><p class="say-en" style="display:none">Create a .env file in the project folder with constants for all the API keys we'll use in this journey: FAL_KEY, ELEVENLABS_API_KEY, XAI_API_KEY. Also add .env to .gitignore so the keys don't get pushed to GitHub.</p></div>
+      <div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור קובץ env. בתיקיית הפרויקט עם קבועים לכל מפתחות ה-API שנשתמש בהם במסע: FAL_KEY, ELEVENLABS_API_KEY. תוסיף גם env לקובץ gitignore כדי שהמפתחות לא יעלו ל-GitHub.</p><p class="say-en" style="display:none">Create a .env file in the project folder with constants for all the API keys we'll use in this journey: FAL_KEY, ELEVENLABS_API_KEY. Also add .env to .gitignore so the keys don't get pushed to GitHub.</p></div>
     </div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">אחרי שקלוד ייצור את הקובץ, פתחו אותו ב<strong>Notepad</strong>: לחצו ימני על הקובץ <code dir="ltr">.env</code> בתיקיית הפרויקט, בחרו "פתח עם" ← Notepad. תראו שורה כזו:</p>
     <div class="preview" style="margin:8px 0"><div class="preview-top"><div class="preview-dots"><i></i><i></i><i></i></div><span class="preview-label">.env</span></div><div class="preview-body"><span class="d">FAL_KEY=</span>הדביקו כאן את המפתח של fal.ai
-<span class="d">ELEVENLABS_API_KEY=</span>ימולא בשלב הקריינות
-<span class="d">XAI_API_KEY=</span>ימולא בשלב האנימציה</div></div>
+<span class="d">ELEVENLABS_API_KEY=</span>ימולא בשלב הקריינות</div></div>
     <p style="font-size:.82rem;color:var(--stone)">הדביקו את מפתח fal.ai אחרי סימן ה-<code>=</code>, שמרו, וסגרו. זהו.</p>
   </div>
 
@@ -683,22 +682,29 @@ description: Research inspiration and write an
 <div class="view" id="v9">
   <div class="ch-tag">שלב 9 מתוך 12</div>
   <h2 class="ch-h">מייצרים קריינות עם AI</h2>
-  <p class="ch-sub">Claude כותב את הטקסט, AI מקריא אותו. אתם רק בוחרים את הטון.</p>
+  <p class="ch-sub">קלוד כותב את הטקסט ויוצר קריינות ב ElevenLabs</p>
 
   <div class="insight">
-    <h3>🎙️ קול בלי קריין</h3>
-    <p>פעם, כדי להקליט קריינות הייתם צריכים אולפן, קריין, מיקרופון, ושעות של הקלטה. היום Claude כותב את הטקסט בהתאם לתסריט שהוא יצר, ו-AI מקריא אותו בצורה טבעית לחלוטין.</p>
+    <h3>🎙️ מה זה ElevenLabs ואיך Claude משתמש בו?</h3>
+    <p><strong>ElevenLabs</strong> היא הפלטפורמה המובילה בעולם לסינתזת קול. יש לה מאות קולות ריאליסטיים בעשרות שפות, כולל עברית. Claude ייגש ל-API שלה, יכתוב את משפטי הקריינות בהתאם לתסריט שיצרנו, ויבחר קול מתאים לאווירה. הוא ישלח את הטקסט ל-ElevenLabs ויקבל בחזרה קובץ MP3 לכל סצנה. <span class="hl">אתם לא כותבים שורה ולא בוחרים קול, Claude עושה הכל.</span></p>
   </div>
 
   <div class="card">
     <h3>🔑 מפתח API של ElevenLabs</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">אני צריך מפתח API של ElevenLabs ליצירת קריינות. תסביר לי איך נרשמים ומקבלים מפתח. גם תגיד לי מה כולל החינמי.</p><p class="say-en" style="display:none">I need an ElevenLabs API key for voiceover generation. Explain how to register and get a key. Also tell me what the free tier includes.</p></div></div>
+    <ol style="padding-right:20px;margin:8px 0 12px;line-height:1.9">
+      <li>היכנסו לדף: <a href="https://elevenlabs.io/app/developers/api-keys" target="_blank" style="color:var(--claude-bright)">elevenlabs.io/app/developers/api-keys</a></li>
+      <li>הירשמו או התחברו לחשבון</li>
+      <li>לחצו "Create API Key", תנו לו שם כלשהו</li>
+      <li>וודאו שמופעל <span class="hl">Text to Speech</span> בהרשאות</li>
+      <li>העתיקו את המפתח</li>
+    </ol>
+    <p style="font-size:.85rem;color:var(--cream3)">את המפתח תדביקו ב-<code dir="ltr">.env</code> תחת <code dir="ltr">ELEVENLABS_API_KEY=</code> בשלב הבא.</p>
   </div>
 
   <div class="card">
-    <h3>📝 Claude כותב ומקליט</h3>
+    <h3>📝 Claude יוצר קריינות</h3>
     <p>Claude כבר כתב תסריט בשלב הקודם. עכשיו הוא ייצור ממנו קריינות:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תבנה סקריפט Python שמייצר קריינות באמצעות ElevenLabs API. תיקח את התסריט שכתבת לסטוריבורד ותכתוב משפטי קריינות מתאימים לכל פאנל. אני רוצה קול גברי, רגוע, סגנון דוקומנטרי. תשמור כל קובץ MP3 בנפרד בתיקיית anti-ai-cream/voiceover ותתן סיכום של משך כל קריינות. המפתח בקובץ .env תחת ELEVENLABS_API_KEY.</p><p class="say-en" style="display:none">Build a Python script that generates voiceover using the ElevenLabs API. Take the script you wrote for the storyboard and write appropriate voiceover lines for each panel. I want a male voice, calm, documentary style. Save each MP3 file separately in the anti-ai-cream/voiceover folder and give a summary of each voiceover duration. The key is in the .env file under ELEVENLABS_API_KEY.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">לך לדוקומנטציה הרשמית של הAPI של ElevenLabs . תבנה סקריפט Python שמייצר קריינות באמצעות ElevenLabs API עם מודל V3. תיקח את התסריט שכתבת ותכתוב משפטי קריינות מתאימים לכל פאנל בקול המתאים לדעתך. תשמור כל קובץ MP3 בנפרד בתיקיית anti-ai-cream/voiceover ותתן סיכום של משך כל קריינות. המפתח בקובץ .env תחת ELEVENLABS_API_KEY.</p><p class="say-en" style="display:none">Go to the official ElevenLabs API documentation. Build a Python script that generates voiceover using the ElevenLabs API with model V3. Take the script you wrote and write appropriate voiceover lines for each panel in the voice you think fits best. Save each MP3 file separately in the anti-ai-cream/voiceover folder and give a summary of each voiceover duration. The key is in the .env file under ELEVENLABS_API_KEY.</p></div></div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">שימו לב: לא כתבתם אף משפט קריינות. <span class="hlg">Claude כתב את הטקסט בהתאם לתסריט שהוא יצר.</span> אם לא אהבתם משהו, פשוט אמרו לו לשנות.</p>
   </div>
 
@@ -708,25 +714,27 @@ description: Research inspiration and write an
       <li><span class="hl">סימני פיסוק שולטים בקצב</span> : שלוש נקודות (...) = השהייה</li>
       <li><span class="hl">בחירת קול</span> : ElevenLabs מציע מאות קולות, אפשר גם לשכפל קול שלכם</li>
       <li><span class="hl">שתיקה מכוונת</span> : לא כל פאנל חייב קריינות. לפעמים שתיקה חזקה יותר</li>
+      <li><span class="hl">מודל Eleven v3 עם Audio Tags</span> : המודל החדש של ElevenLabs מבין תגיות בסוגריים מרובעים שמוכנסות ישירות בטקסט ומשנות את אופן הדיבור. לדוגמה: <code dir="ltr">[whispers] סוד קטן... [excited] והוא עובד!</code><br>קטגוריות נפוצות: רגשות <code dir="ltr">[nervous] [calm] [sorrowful]</code> — קצב <code dir="ltr">[pauses] [rushed] [hesitates]</code> — עצמה <code dir="ltr">[whispers] [shouts]</code> — טון <code dir="ltr">[cheerfully] [deadpan] [playfully]</code>. אפשר לשלב כמה תגיות באותו משפט</li>
       <li><span class="hl">אתם מאשרים</span> : Claude מציע, אתם אומרים "מעולה" או "תשנה את הטון של פאנל 3"</li>
     </ul>
   </div>
 
-  <div class="quiz" data-id="q8">
-    <div class="quiz-head">🎯 בדיקת הבנה</div>
-    <p class="quiz-q">מי כותב את טקסט הקריינות?</p>
-    <div class="quiz-opts">
-      <div class="quiz-opt" onclick="qz(this,0)">אני כותב כל משפט בעצמי</div>
-      <div class="quiz-opt" onclick="qz(this,1)">Claude כותב בהתאם לתסריט, ואני מאשר או מבקש שינויים</div>
-      <div class="quiz-opt" onclick="qz(this,0)">ה-AI של ElevenLabs ממציא לבד</div>
-    </div>
-    <div class="quiz-msg"></div>
-  </div>
   <div class="card" style="border-color:rgba(232,113,74,.2)">
     <h3>⚡ עכשיו: צרו Skill /voiceover</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם voiceover שמריץ את כל תהליך יצירת הקריינות. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p><p class="say-en" style="display:none">Create a Skill named voiceover that runs the entire voiceover creation process. Consult the claude code guide to create a standard SKILL.md.</p></div></div>
-    <p style="margin-top:8px"><span class="hlg">פעם הבאה: /voiceover ומסיימים.</span></p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם voiceover בתיקיית הפרויקט הנוכחי. תעיין ב-claude code guide ותיצור SKILL.md תקני. ה-Skill צריך: לקרוא את התסריט הקיים, לגשת לדוקומנטציה הרשמית של ElevenLabs API, לכתוב משפטי קריינות מתאימים לכל פאנל עם מודל V3 בקול שמתאים לאווירה, ולשמור כל קובץ MP3 בנפרד בתיקיית voiceover של הפרסומת. המפתח בקובץ .env תחת ELEVENLABS_API_KEY.</p><p class="say-en" style="display:none">Create a Skill named voiceover in the current project folder. Consult the claude code guide and create a standard SKILL.md. The Skill should: read the existing script, consult the official ElevenLabs API documentation, write appropriate voiceover lines for each panel using model V3 in a voice that fits the mood, and save each MP3 separately in the voiceover subfolder of the commercial. The key is in the .env file under ELEVENLABS_API_KEY.</p></div></div>
+    <p style="margin-top:8px"><span class="hlg">פעם הבאה: voiceover/ ומסיימים.</span></p>
     <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/voiceover/SKILL.md</code></p>
+  </div>
+
+  <div class="quiz" data-id="q8">
+    <div class="quiz-head">🎯 בדיקת הבנה</div>
+    <p class="quiz-q">אני רוצה שה-Skill של הקריינות תמיד ישתמש בקול ספציפי. מה עושים?</p>
+    <div class="quiz-opts">
+      <div class="quiz-opt" onclick="qz(this,0)">בוחרים קול ידנית בכל פעם ב-ElevenLabs</div>
+      <div class="quiz-opt" onclick="qz(this,1)">אומרים ל-Claude לעדכן את ה-Skill עם ה-Voice ID, או פותחים את הקובץ ב-<code dir="ltr">.claude/skills/voiceover/SKILL.md</code> ומוסיפים את ההוראה שם</div>
+      <div class="quiz-opt" onclick="qz(this,0)">לא ניתן לקבוע קול קבוע ב-Skill</div>
+    </div>
+    <div class="quiz-msg"></div>
   </div>
 
   <button class="btn btn-go" onclick="done(9)">לשלב הבא</button>
@@ -738,22 +746,23 @@ description: Research inspiration and write an
 <div class="view" id="v10">
   <div class="ch-tag">שלב 10 מתוך 12</div>
   <h2 class="ch-h">תמונות שמתעוררות לחיים</h2>
-  <p class="ch-sub">Claude מחליט על תנועות מצלמה וקצב. אתם רק מאשרים.</p>
+  <p class="ch-sub">קלוד מנפיש את הסטוריבורד לפי התסריט</p>
 
   <div class="insight">
     <h3>🎬 מתמונה לסרטון</h3>
-    <p>דמיינו שיש לכם תמונה של בן אדם יושב ליד מחשב. עכשיו דמיינו שהתמונה <strong>מתעוררת לחיים</strong>: הוא מניד ראש, האור משתנה, המסך מהבהב. <strong>זה בדיוק מה ש-AI יודע לעשות.</strong></p>
+    <p>לפרסומת שלנו יצרנו תמונות סטוריבורד. עכשיו כל תמונה <strong>מתעוררת לחיים</strong>: יד שזזה, הבעה שמשתנה, אור שנע. זה מה ש-AI image-to-video עושה.</p>
+    <p style="margin-top:12px">היום יש כמה מודלים שיכולים לקחת תמונה ולהפוך אותה לקטע וידאו קצר. כולם נגישים דרך API, כלומר Claude יכול להפעיל אותם בשבילכם ישירות מהפרויקט. בפרויקט שלנו נשתמש ב-<span class="hl">Grok Imagine</span> של xAI, שתומך ב-image-to-video ומייצר קטעים עד 15 שניות. מודלים נוספים כמו למשל : <span class="hl">Kling</span>, <span class="hl">Veo</span> (Google), ו-<span class="hl">Seedance</span> (ByteDance).</p>
+  </div>
+
+  <div class="insight" style="border-color:rgba(16,185,129,.2)">
+    <h3 style="color:var(--emerald)">🔑 אין צורך במפתח חדש</h3>
+    <p>נשתמש ב-fal.ai כדי להפעיל את Grok Imagine, כך שה-<code dir="ltr">FAL_KEY</code> שכבר הגדרתם בשלב הסטוריבורד מספיק. אפשר להתחיל ישר.</p>
   </div>
 
   <div class="card">
-    <h3>🔑 מפתח API</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">אני צריך מפתח API של xAI (Grok) ליצירת וידאו מתמונות. תסביר לי איך נרשמים ומקבלים מפתח.</p><p class="say-en" style="display:none">I need an xAI (Grok) API key for generating video from images. Explain how to register and get a key.</p></div></div>
-  </div>
-
-  <div class="card">
-    <h3>📝 Claude עושה אנימציה הכל</h3>
+    <h3>📝קלוד מנפיש את הסטוריבורד</h3>
     <p>Claude כבר מכיר את התסריט והסטוריבורד. הוא יחליט על תנועות מצלמה מתאימות לכל סצנה:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תבנה סקריפט Python שלוקח כל תמונת פאנל מהסטוריבורד והופך אותה לקליפ וידאו באמצעות xAI Grok Imagine API. תחליט על תנועת מצלמה, קצב ומשך מתאימים לכל סצנה בהתאם לתסריט שכתבת. תשמור כל קליפ בנפרד בתיקיית anti-ai-cream/animated.</p><p class="say-en" style="display:none">Build a Python script that takes each panel image from the storyboard and turns it into a video clip using the xAI Grok Imagine API. Decide on appropriate camera movement, pace, and duration for each scene based on the script you wrote. Save each clip separately in the anti-ai-cream/animated folder.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תבנה סקריפט Python שלוקח כל תמונת פאנל מהסטוריבורד והופך אותה לקליפ וידאו באמצעות Grok Imagine דרך fal.ai API. תחליט על תנועת מצלמה, קצב ומשך מתאימים לכל סצנה בהתאם לתסריט שכתבת. תשמור כל קליפ בנפרד בתיקיית anti-ai-cream/animated. המפתח בקובץ .env תחת FAL_KEY.</p><p class="say-en" style="display:none">Build a Python script that takes each panel image from the storyboard and turns it into a video clip using Grok Imagine via fal.ai API. Decide on appropriate camera movement, pace, and duration for each scene based on the script you wrote. Save each clip separately in the anti-ai-cream/animated folder. The key is in the .env file under FAL_KEY.</p></div></div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יחליט לבד: דולי, push-in, מצלמה קבועה. <span class="hlg">הוא מבין מה מתאים לכל סצנה כי הוא כתב את התסריט.</span></p>
   </div>
 
