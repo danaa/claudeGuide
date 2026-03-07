@@ -446,6 +446,8 @@ body::before{
 .hl{color:var(--claude-bright);font-weight:600}
 .hlg{color:var(--emerald);font-weight:600}
 .hla{color:var(--sky);font-weight:500}
+.say-body mark{background:transparent;color:var(--cream1);border-bottom:1px dashed rgba(232,113,74,.5);padding:0;font-style:normal}
+.say-content mark{background:transparent;color:var(--cream1);border-bottom:1px dashed rgba(232,113,74,.5);padding:0;font-style:normal}
 
 /* ═════ HERO ═════ */
 /* ═════ HERO ═════ */
