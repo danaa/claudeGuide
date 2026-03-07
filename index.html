@@ -72,6 +72,29 @@
     <p style="margin-top:8px">בסוף המסע תדעו להגיד ל-Claude ליצור פרסומת שלמה: מתסריט, דרך תמונות, קריינות ואנימציה, עד לווידאו מוגמר.</p>
   </div>
 
+  <div class="card">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px">
+      <div>
+        <p style="font-weight:700;color:var(--cream1);margin-bottom:10px;font-size:.95rem">מה נלמד</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:.83rem;color:var(--cream3);line-height:1.5">
+          <li>✅ נלמד לדבר עם Claude Code כמו שותף אמיתי שיודע לבצע, לא רק לייעץ</li>
+          <li>✅ נבין מה זה Skills ונגרום ל-Claude לכתוב אותם לעצמו</li>
+          <li>✅ נפסיק לפחד ממילים כמו API ו-Python</li>
+          <li>✅ נרגיש כמה Claude Code גמיש וניתן להתאמה אישית</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-weight:700;color:var(--cream1);margin-bottom:10px;font-size:.95rem">מה לא נלמד</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:.83rem;color:var(--cream3);line-height:1.5">
+          <li>❌ לא נהפוך למומחי Claude Code</li>
+          <li>❌ לא נכסה נושאים מתקדמים כמו sub-agents או hooks</li>
+          <li>❌ זה מיועד לצעדים הראשונים. שאר הדרך? אחרי שנרגיש בנוח</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:.8rem;color:var(--stone);margin-top:4px">אני מקווה שבסוף נצא עם צ'אקרות פתוחות וראש אחר על מה שאפשר לעשות עם Claude Code.</p>
+  </div>
+
   <div class="insight">
     <h3>💡 לפני שמתחילים, מילה קטנה</h3>
     <p>במסע הזה תלמדו לבנות אוטומציה שיוצרת פרסומות וידאו עם Claude Code. התוצאה לא תמיד תצא מושלמת בפעם הראשונה, וזה בסדר גמור. כלי AI עדיין בהתפתחות, ולפעמים Claude יצטרך כיוון מכם, תיקון קטן, או ניסיון נוסף. אבל בדיוק בשביל זה אנחנו פה: <span class="hl">ללמוד איך לדבר איתו, איך לכוון אותו, ואיך להוציא ממנו את המיטב</span>. הדרך עצמה היא הלמידה.</p>
@@ -81,10 +104,10 @@
   <div class="card about-card">
     <div style="display:flex;gap:16px;align-items:center;margin-bottom:12px">
       <img src="assets/dana.jpg" alt="דנה אקרמן גרין" style="width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0">
-      <h3 style="margin:0">מי עומדת מאחורי המסע הזה?</h3>
+      <h3 style="margin:0">קצת עליי</h3>
     </div>
-    <p><span class="hl">דנה אקרמן גרין</span> / Digital Creator, מפתחת תוכנה, מנהלת קהילת Midjourney Israel, ויוצרת כלי AI יצירתיים. דנה מלמדת אנשים יצירתיים לרתום טכנולוגיה בלי לכתוב שורת קוד אחת.</p>
-    <p style="margin-top:8px">מייסדת <a href="https://genaicreative.art" target="_blank" class="hl" style="text-decoration:none;border-bottom:1px solid rgba(255,140,90,.3)">GenAI Creative</a>, פלטפורמת AI יצירתית עם תמיכה מלאה בעברית, מתאימה במיוחד למתחילים.</p>
+    <p>היי, אני <span class="hl">דנה אקרמן גרין</span>. מפתחת תוכנה, Digital Creator, ומנהלת קהילת Midjourney Israel. אני יוצרת כלי AI יצירתיים ומלמדת אנשים יצירתיים לרתום טכנולוגיה בלי לכתוב שורת קוד אחת.</p>
+    <p style="margin-top:8px">בנוסף, אני המייסדת של <a href="https://genaicreative.art" target="_blank" class="hl" style="text-decoration:none;border-bottom:1px solid rgba(255,140,90,.3)">GenAI Creative</a>, פלטפורמת AI יצירתית עם תמיכה מלאה בעברית שבניתי במיוחד למתחילים.</p>
     <div class="about-links">
       <a href="https://www.facebook.com/dana.akerman" target="_blank" class="about-link">Facebook</a>
       <a href="https://www.linkedin.com/in/dana-akerman-green-10347365" target="_blank" class="about-link">LinkedIn</a>
@@ -644,6 +667,12 @@ description: Research inspiration and write an
     <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">חפש ברשת את התיעוד הרשמי של fal.ai למודל fal-ai/nano-banana-2 כדי לוודא שאתה משתמש ב-API הנכון. בנוסף, חפש באתרים רשמיים כיצד לכתוב פרומפטים פוטוריאליסטיים טובים עבור המודל הזה. תתקין את הספריות פייתון שצריך.<br><br>תכתוב קוד שקורא לAPI פעם אחת בלבד ומייצר תמונה אחת בגודל 4K שהיא סטוריבורד עקבי מהתסריט שכתבנו. התמונה תהיה ריבועית (1:1) ומחולקת ל-6 פאנלים בגריד 2x3 (2 עמודות, 3 שורות), כל פאנל ביחס 16:9, ללא שוליים ומסגרות. כל פאנל מייצג פריים פתיחה אחד מהתסריט. חשוב: אסור שיופיע שום טקסט בתמונות, ללא כתוביות, ללא כרטיסי טקסט, ללא שקפים. שלב העריכה יטפל בטקסט בנפרד.<br><br>תכתוב לAPI פרומפט בקובץ טקסט רגיל כך שבפעם הבאה נצטרך לשנות רק את הפרומפט. הקוד יטען את הקובץ וישלח לAPI.<br><br>תשמור את התמונה בתיקיית storyboard. המפתח בקובץ .env תחת FAL_KEY. אחרי שתסיים לכתוב את הקוד, הרץ אותו.</p><p class="say-en" style="display:none">Search the web for the official fal.ai documentation for the fal-ai/nano-banana-2 model to make sure you're using the correct API. Also search official resources on how to write good photorealistic prompts for this model. Install the required Python libraries.<br><br>Write code that calls the API only once and generates a single 4K storyboard image consistent with the script we wrote. The image will be square (1:1) divided into 6 panels in a 2x3 grid (2 columns, 3 rows), each panel at 16:9 ratio, with no margins or borders. Each panel represents one opening frame from the script. Important: no text must appear in any of the images — no captions, no title cards, no overlays. The editing stage will handle all text separately.<br><br>Write the API prompt in a plain text file so next time we only need to update the prompt. The code will load the file and send it to the API.<br><br>Save the image in the storyboard folder. The key is in the .env file under FAL_KEY. Once you finish writing the code, run it.</p></div></div>
   </div>
 
+  <div class="insight" style="border-color:rgba(245,158,11,.2)">
+    <h3 style="color:var(--gold)">⏳ למה זה לוקח זמן ומבקש הרבה אישורים?</h3>
+    <p>בפעם הראשונה Claude עושה כמה דברים במקביל: מחפש תיעוד, מתקין ספריות Python, כותב קוד ומריץ אותו. זה לוקח זמן ומצריך את אישורכם בכל שלב.</p>
+    <p style="margin-top:8px"><span class="hlg">בפעם הבאה זה יהיה מהיר בהרבה.</span> כשתפעילו את התהליך קלוד כבר יכיר את ה-API, הספריות כבר יהיו מותקנות, והקוד כבר יהיה כתוב. הוא פשוט ירוץ.</p>
+  </div>
+
   <div class="insight" style="border-color:rgba(56,189,248,.15)">
     <h3 style="color:var(--sky)">🐛 אם משהו לא עובד, Claude יתקן לבד</h3>
     <p>כשהקוד רץ, Claude עלול לפגוש שגיאה. זה נורמלי לחלוטין. הוא יראה את השגיאה, יבין מה קרה, ויתקן. כל מה שצריך מכם: <strong>לאשר את השינויים שהוא מציע.</strong> פשוט המתינו.</p>
@@ -664,11 +693,11 @@ description: Research inspiration and write an
 
   <div class="quiz" data-id="q7">
     <div class="quiz-head">🎯 בדיקת הבנה</div>
-    <p class="quiz-q">פתחו את תיקיית הפרויקט. מה שם קובץ ה-Python שנוצר לסטוריבורד?</p>
+    <p class="quiz-q">רציתם להשתמש במודל תמונה אחר במקום Nano Banana 2. מה תעשו?</p>
     <div class="quiz-opts">
-      <div class="quiz-opt" onclick="qz(this,0)" dir="ltr">storyboard_output.jpg</div>
-      <div class="quiz-opt" onclick="qz(this,1)" dir="ltr">generate_storyboard.py (או שם דומה)</div>
-      <div class="quiz-opt" onclick="qz(this,0)" dir="ltr">SKILL.md</div>
+      <div class="quiz-opt" onclick="qz(this,0)">אחפש בגוגל ואנסה להבין לבד איך לחבר אותו</div>
+      <div class="quiz-opt" onclick="qz(this,1)">אבקש מ-Claude למצוא את התיעוד הרשמי של ה-API של המודל, והוא ינחה אותי ויכתוב את הקוד</div>
+      <div class="quiz-opt" onclick="qz(this,0)">זה לא אפשרי, צריך להשאר עם אותו מודל</div>
     </div>
     <div class="quiz-msg"></div>
   </div>
@@ -703,7 +732,7 @@ description: Research inspiration and write an
   <div class="card">
     <h3>📝 Claude יוצר קריינות</h3>
     <p>Claude כבר כתב תסריט בשלב הקודם. עכשיו הוא ייצור ממנו קריינות:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">לך לדוקומנטציה הרשמית של הAPI של ElevenLabs . תבנה סקריפט Python שמייצר קריינות באמצעות ElevenLabs API עם מודל V3. תיקח את התסריט שכתבת ותכתוב משפטי קריינות מתאימים לכל פאנל בקול המתאים לדעתך. תשמור כל קובץ MP3 בנפרד בתיקיית anti-ai-cream/voiceover ותתן סיכום של משך כל קריינות. המפתח בקובץ .env תחת ELEVENLABS_API_KEY.</p><p class="say-en" style="display:none">Go to the official ElevenLabs API documentation. Build a Python script that generates voiceover using the ElevenLabs API with model V3. Take the script you wrote and write appropriate voiceover lines for each panel in the voice you think fits best. Save each MP3 file separately in the anti-ai-cream/voiceover folder and give a summary of each voiceover duration. The key is in the .env file under ELEVENLABS_API_KEY.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">לך לדוקומנטציה הרשמית של ה-API של ElevenLabs. בנוסף, חפש באתרים רשמיים מידע על תגיות ה-V3 (audio tags) ועל קולות שזמינים בתוכנית החינמית של ה-API. תכתוב קוד Python שמייצר קריינות באמצעות ElevenLabs API עם מודל V3. תיקח את התסריט שכתבת ותכתוב משפטי קריינות מתאימים לכל פאנל בקול המתאים לדעתך, תוך שימוש בתגיות V3 לשיפור האקספרסיביות. תשמור כל קובץ MP3 בנפרד בתיקיית voiceover ותתן סיכום של משך כל קריינות. המפתח בקובץ .env תחת ELEVENLABS_API_KEY.</p><p class="say-en" style="display:none">Go to the official ElevenLabs API documentation. Also search official sources for information about V3 audio tags and which voice IDs are available on the free API plan. Write Python code that generates voiceover using the ElevenLabs API with model V3. Take the script you wrote and write appropriate voiceover lines for each panel in the voice you think fits best, using V3 audio tags to enhance expressiveness. Save each MP3 file separately in the voiceover folder and give a summary of each voiceover duration. The key is in the .env file under ELEVENLABS_API_KEY.</p></div></div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">שימו לב: לא כתבתם אף משפט קריינות. <span class="hlg">Claude כתב את הטקסט בהתאם לתסריט שהוא יצר.</span> אם לא אהבתם משהו, פשוט אמרו לו לשנות.</p>
   </div>
 
@@ -761,35 +790,35 @@ description: Research inspiration and write an
   <div class="card">
     <h3>📝קלוד מנפיש את הסטוריבורד</h3>
     <p>Claude כבר מכיר את התסריט והסטוריבורד. הוא יחליט על תנועות מצלמה מתאימות לכל סצנה:</p>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תבנה סקריפט Python שלוקח כל תמונת פאנל מהסטוריבורד והופך אותה לקליפ וידאו באמצעות Grok Imagine דרך fal.ai API. תחליט על תנועת מצלמה, קצב ומשך מתאימים לכל סצנה בהתאם לתסריט שכתבת. תשמור כל קליפ בנפרד בתיקיית anti-ai-cream/animated. המפתח בקובץ .env תחת FAL_KEY.</p><p class="say-en" style="display:none">Build a Python script that takes each panel image from the storyboard and turns it into a video clip using Grok Imagine via fal.ai API. Decide on appropriate camera movement, pace, and duration for each scene based on the script you wrote. Save each clip separately in the anti-ai-cream/animated folder. The key is in the .env file under FAL_KEY.</p></div></div>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">חפש באתרים רשמיים כיצד לכתוב פרומפטים טובים למודל Grok Imagine לווידאו. אחר כך חפש את התיעוד הרשמי של fal.ai ל-Grok Imagine כדי לוודא שאתה משתמש ב-API הנכון.<br><br>על בסיס התסריט שכתבת, כתוב לכל סצנה פרומפט וידאו מתאים עם תנועת מצלמה, קצב ומשך. שמור את הפרומפטים בקובץ טקסט.<br><br>כתוב קוד שלוקח כל תמונת פאנל מהסטוריבורד ומשתמש בפרומפט המתאים לה כדי להפוך אותה לקליפ וידאו באמצעות Grok Imagine דרך fal.ai API. תשמור כל קליפ בנפרד בתיקיית animated. המפתח בקובץ .env תחת FAL_KEY. אחרי שתסיים לכתוב את הקוד, הרץ אותו.</p><p class="say-en" style="display:none">Search official sources on how to write good prompts for the Grok Imagine video model. Then find the official fal.ai documentation for Grok Imagine to make sure you're using the correct API.<br><br>Based on the script you wrote, create a video prompt for each scene with appropriate camera movement, pace, and duration. Save the prompts in a text file.<br><br>Write code that takes each storyboard panel image and uses its matching prompt to turn it into a video clip using Grok Imagine via the fal.ai API. Save each clip separately in the animated folder. The key is in the .env file under FAL_KEY. Once you finish writing the code, run it.</p></div></div>
     <p style="margin-top:10px;font-size:.85rem;color:var(--cream3)">Claude יחליט לבד: דולי, push-in, מצלמה קבועה. <span class="hlg">הוא מבין מה מתאים לכל סצנה כי הוא כתב את התסריט.</span></p>
   </div>
 
   <div class="card">
     <h3>💡 אתם עדיין הבמאי</h3>
-    <p>Claude מציע, אתם מאשרים. אם משהו לא מתאים, תגידו:</p>
+    <p>ראיתם את הקליפים ומשהו לא עבד? אפשר לבקש ממנו לחזור ולייצר מחדש עם שינויים. לדוגמה:</p>
     <ul>
-      <li>"תשנה את פאנל 3 למצלמה קבועה במקום דולי"</li>
-      <li>"תאט את פאנל 5, אני רוצה יותר מתח"</li>
-      <li>"תוסיף עוד שנייה לפאנל האחרון"</li>
+      <li>"פאנל 3 לא נראה טוב, תשנה את הפרומפט ל-push-in איטי ותריץ מחדש"</li>
+      <li>"תחליף את תנועת המצלמה של פאנל 5 למצלמה קבועה, יוצא דרמטי יותר"</li>
+      <li>"הקליפ של סצנה 2 קצר מדי, תוסיף שנייה לפרומפט ותייצר שוב"</li>
     </ul>
-    <p style="margin-top:8px"><span class="hlg">אתם לא צריכים לדעת מונחים קולנועיים.</span> אפשר גם לומר "תעשה את זה יותר איטי" או "אני רוצה שירגישו עצב פה".</p>
+    <p style="margin-top:8px"><span class="hlg">אתם לא צריכים לדעת מונחים קולנועיים.</span> אפשר גם לומר "זה נראה משעמם, תעשה את זה יותר דינמי" ו-Claude יתרגם את זה לפרומפט מתאים.</p>
   </div>
 
   <div class="card" style="border-color:rgba(232,113,74,.2)">
     <h3>⚡ עכשיו: צרו Skill /animate</h3>
-    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם animate שמריץ את כל תהליך האנימציה מתמונות לקליפי וידאו. תעיין ב-claude code guide ליצירת SKILL.md תקני.</p><p class="say-en" style="display:none">Create a Skill named animate that runs the entire animation process from images to video clips. Consult the claude code guide to create a standard SKILL.md.</p></div></div>
-    <p style="margin-top:8px"><span class="hlg">פעם הבאה: /animate ומסיימים.</span></p>
+    <div class="say"><span class="say-label">🗣️ מה לכתוב ל-CLAUDE:</span><div class="say-tabs"><button class="say-tab active" onclick="st(this,'he')">עב</button><button class="say-tab" onclick="st(this,'en')">EN</button></div><div class="say-content"><button class="say-copy" onclick="sc(this)" title="העתק">📋</button><p class="say-he">תיצור Skill בשם animate בתיקיית הפרויקט הנוכחי. תעיין ב-claude code guide ותיצור SKILL.md תקני. ה-Skill צריך: לקרוא את תמונות הסטוריבורד מתיקיית storyboard, לכתוב פרומפט וידאו לכל פאנל עם תנועת מצלמה מתאימה, ולהפוך כל תמונה לקליפ וידאו עם Grok Imagine דרך fal.ai API. לשמור כל קליפ בנפרד בתיקיית animated של הפרסומת. המפתח בקובץ .env תחת FAL_KEY.</p><p class="say-en" style="display:none">Create a Skill named animate in the current project folder. Consult the claude code guide and create a standard SKILL.md. The Skill should: read the storyboard images from the storyboard folder, write a video prompt for each panel with appropriate camera movement, and turn each image into a video clip using Grok Imagine via the fal.ai API. Save each clip separately in the animated subfolder of the commercial. The key is in the .env file under FAL_KEY.</p></div></div>
+    <p style="margin-top:8px"><span class="hlg">פעם הבאה: animate/ ומסיימים.</span></p>
     <p style="margin-top:6px;font-size:.82rem;color:var(--stone)">📁 הקובץ נשמר בנתיב: <code dir="ltr">.claude/skills/animate/SKILL.md</code></p>
   </div>
 
   <div class="quiz" data-id="q9">
     <div class="quiz-head">🎯 בדיקת הבנה</div>
-    <p class="quiz-q">מה התפקיד שלכם בתהליך האנימציה?</p>
+    <p class="quiz-q">פתחו את תיקיית הפרויקט. מה שם קובץ הקוד שנוצר לאנימציה?</p>
     <div class="quiz-opts">
-      <div class="quiz-opt" onclick="qz(this,0)">לכתוב הוראות מצלמה מפורטות לכל פאנל</div>
-      <div class="quiz-opt" onclick="qz(this,1)">לאשר את מה ש-Claude מציע, או לבקש שינויים בשפה פשוטה</div>
-      <div class="quiz-opt" onclick="qz(this,0)">לערוך את הווידאו בתוכנת עריכה</div>
+      <div class="quiz-opt" onclick="qz(this,0)" dir="ltr">animation_output.mp4</div>
+      <div class="quiz-opt" onclick="qz(this,1)" dir="ltr">animate.py (או שם דומה)</div>
+      <div class="quiz-opt" onclick="qz(this,0)" dir="ltr">SKILL.md</div>
     </div>
     <div class="quiz-msg"></div>
   </div>
